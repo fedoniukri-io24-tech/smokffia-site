@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "SMOKFFIA — UI/UX і вебдизайнерка Софія";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -58,7 +57,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            UI/UX і вебдизайн, який запам'ятовується
+            UI/UX і вебдизайн, який запам&apos;ятовується
           </div>
           <div
             style={{
