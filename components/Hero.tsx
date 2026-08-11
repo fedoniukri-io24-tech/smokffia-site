@@ -2,6 +2,7 @@
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 type HeroProps = {
   dict: Dictionary["hero"];
@@ -15,6 +16,8 @@ export default function Hero({ dict, locale }: HeroProps) {
     <section className="hero">
       <div className="container container--wide hero__inner">
         <div className="hero__content">
+          <LanguageSwitcher locale={locale} />
+
           <p className="hero__eyebrow">{dict.eyebrow}</p>
 
           <h1 className="hero__title">

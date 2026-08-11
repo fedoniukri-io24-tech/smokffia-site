@@ -62,9 +62,6 @@ export default function Navbar({ locale, dict }: Props) {
       </ul>
 
       <div className="navbar__right">
-        <div className="navbar__lang-desktop">
-          <LanguageSwitcher locale={locale} variant="compact" />
-        </div>
         <a href={`${base}#contacts`} className="navbar__cta btn-nav">
           {dict.cta}
         </a>
@@ -120,7 +117,6 @@ export default function Navbar({ locale, dict }: Props) {
             <p className="navbar__mobile-lang-label">{dict.language}</p>
             <LanguageSwitcher
               locale={locale}
-              variant="menu"
               onSelect={() => setMobileOpen(false)}
             />
           </div>

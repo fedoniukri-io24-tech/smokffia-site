@@ -297,8 +297,9 @@ button {
 .navbar__logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  grid-column: 1;
+  justify-content: center;
+  grid-column: 2;
+  justify-self: center;
   z-index: 1;
 }
 
@@ -353,10 +354,6 @@ button {
   gap: 0.75rem;
   grid-column: 3;
   justify-self: end;
-}
-
-.navbar__lang-desktop {
-  display: none;
 }
 
 .navbar__cta {
@@ -449,69 +446,104 @@ button {
   font-size: 1rem;
 }
 
-/* Language switcher */
+/* Language switcher — small lime pill + dropdown */
 .lang-switch {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  z-index: 20;
 }
 
-.lang-switch__item {
+.lang-switch__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--lime);
+  border: 2px solid var(--black);
+  border-radius: 2px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--black);
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.lang-switch__arrow {
+  font-size: 0.7rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.lang-switch--open .lang-switch__arrow {
+  transform: rotate(180deg);
+}
+
+.lang-switch__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 11.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--white);
+  border: 2px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  z-index: 30;
+}
+
+.lang-switch__option {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.85rem 1rem;
-  border: 2px solid var(--black);
+  gap: 0.65rem;
+  padding: 0.7rem 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  background: var(--white);
   color: var(--black);
-  transition: transform 0.15s, box-shadow 0.15s;
+  border-bottom: 1px solid #eee;
+  font-size: 0.75rem;
 }
 
-.lang-switch__item--active {
+.lang-switch__option:last-child {
+  border-bottom: none;
+}
+
+.lang-switch__option:hover,
+.lang-switch__option--active {
   background: var(--lime);
+}
+
+.lang-switch__option-code {
+  min-width: 1.6rem;
+}
+
+.lang-switch__option-name {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.navbar__mobile-lang .lang-switch {
+  width: 100%;
+}
+
+.navbar__mobile-lang .lang-switch__trigger {
+  font-size: 0.875rem;
+  padding: 0.65rem 0.9rem;
+}
+
+.navbar__mobile-lang .lang-switch__menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: 0.5rem;
+  width: 100%;
+  min-width: 0;
   box-shadow: 4px 4px 0 var(--black);
-}
-
-.lang-switch__item:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 var(--black);
-}
-
-.lang-switch__short {
-  font-size: 0.8rem;
-  min-width: 1.75rem;
-}
-
-.lang-switch__name {
-  font-size: 0.9rem;
-}
-
-.lang-switch--compact {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-.lang-switch__code {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.1rem;
-  padding: 0.35rem 0.45rem;
-  border: 1.5px solid var(--black);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--black);
-  background: var(--white);
-}
-
-.lang-switch__code--active {
-  background: var(--lime);
 }
 
 /* ——— Hero ——— */
@@ -539,22 +571,11 @@ button {
 
 .hero__lang {
   display: none;
-  align-items: center;
-  gap: 6px;
-  background: var(--lime);
-  border: 2px solid var(--black);
-  border-radius: 2px;
-  padding: 0.3rem 0.7rem;
-  margin-bottom: 1.25rem;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  width: fit-content;
 }
 
-.hero__lang-arrow {
-  font-size: 0.7rem;
-  line-height: 1;
+.hero__content > .lang-switch {
+  display: inline-block;
+  margin-bottom: 1.25rem;
 }
 
 .hero__eyebrow {
@@ -2367,10 +2388,6 @@ button {
     justify-self: end;
   }
 
-  .navbar__lang-desktop {
-    display: block;
-  }
-
   .navbar__cta {
     display: inline-flex;
   }
@@ -2394,8 +2411,7 @@ button {
     min-height: calc(100vh - var(--nav-h));
   }
 
-  .hero__lang {
-    display: inline-flex;
+  .hero__content > .lang-switch .lang-switch__trigger {
     font-size: 0.875rem;
     padding: 0.4rem 0.9rem;
   }
