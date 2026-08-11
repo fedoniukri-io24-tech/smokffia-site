@@ -1,36 +1,43 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import type { Locale } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/get-dictionary";
+
+type ContactsProps = {
+  dict: Dictionary["contacts"];
+  locale: Locale;
+};
 
 const footerLinks = [
   {
-    label: "EMAIL",
+    key: "EMAIL" as const,
     value: "PORUCAEVAMARIA@GMAIL.COM",
     href: "mailto:porucaevamaria@gmail.com",
   },
   {
-    label: "FIVERR",
+    key: "FIVERR" as const,
     value: "/SMOKFFIA?PUBLIC_MODE=TRUE",
     href: "https://fiverr.com/smokffia",
   },
   {
-    label: "BEHANCE",
+    key: "BEHANCE" as const,
     value: "/SMOKFFIAUIUX",
     href: "https://behance.net/smokffiauiux",
   },
   {
-    label: "LINKEDIN",
+    key: "LINKEDIN" as const,
     value: "/SMOKFFIA/",
     href: "https://linkedin.com/in/smokffia",
   },
   {
-    label: "INSTAGRAM",
+    key: "INSTAGRAM" as const,
     value: "@SMOKFFIAIUIUXDESIGN",
     href: "https://www.instagram.com/smokffiaiuiuxdesign/",
   },
 ];
 
-export default function Contacts() {
+export default function Contacts({ dict, locale }: ContactsProps) {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,7 +54,7 @@ export default function Contacts() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, locale }),
       });
 
       const data = (await res.json().catch(() => null)) as {
@@ -55,14 +62,14 @@ export default function Contacts() {
       } | null;
 
       if (!res.ok) {
-        throw new Error(data?.error || "Не вдалося надіслати");
+        throw new Error(data?.error || dict.error);
       }
 
       setSent(true);
       setForm({ name: "", phone: "", message: "" });
       setTimeout(() => setSent(false), 4000);
     } catch {
-      setError("Не вдалося надіслати. Спробуйте ще раз або напишіть у Telegram.");
+      setError(dict.error);
     } finally {
       setLoading(false);
     }
@@ -85,15 +92,15 @@ export default function Contacts() {
               {sent ? (
                 <div className="contacts__success">
                   <p className="contacts__success-text">
-                    Повідомлення надіслано!
+                    {dict.success}
                     <br />
-                    Зв&apos;яжусь найближчим часом.
+                    {dict.successSub}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="contacts__form">
                   <div>
-                    <label className="contacts__label">ІМ&apos;Я</label>
+                    <label className="contacts__label">{dict.name}</label>
                     <input
                       type="text"
                       required
@@ -108,7 +115,7 @@ export default function Contacts() {
                     />
                   </div>
                   <div>
-                    <label className="contacts__label">ТЕЛЕФОН</label>
+                    <label className="contacts__label">{dict.phone}</label>
                     <input
                       type="tel"
                       required
@@ -124,7 +131,7 @@ export default function Contacts() {
                     />
                   </div>
                   <div>
-                    <label className="contacts__label">ВАШ ЗАПИТ</label>
+                    <label className="contacts__label">{dict.message}</label>
                     <input
                       type="text"
                       name="message"
@@ -133,7 +140,7 @@ export default function Contacts() {
                         setForm({ ...form, message: e.target.value })
                       }
                       className="contact-input"
-                      placeholder="напишіть коротко про свій проєкт"
+                      placeholder={dict.placeholder}
                       disabled={loading}
                     />
                   </div>
@@ -143,7 +150,7 @@ export default function Contacts() {
                     className="contacts__submit"
                     disabled={loading}
                   >
-                    {loading ? "НАДСИЛАЮ..." : "НАПИСАТИ"}
+                    {loading ? dict.sending : dict.submit}
                   </button>
                 </form>
               )}
@@ -152,15 +159,16 @@ export default function Contacts() {
 
           <div className="contacts__info">
             <div>
-              <h2 className="contacts__heading">КОНТАКТИ</h2>
+              <h2 className="contacts__heading">{dict.heading}</h2>
               <p className="contacts__text">
-                Потрібен сучасний дизайн сайту,
+                {dict.text1}
                 <br />
-                лендингу чи вебсервісу?
+                {dict.text1b}
               </p>
               <p className="contacts__text">
-                Розкажіть про свій проєкт, і я зв&apos;яжуся
-                <br />з вами найближчим часом.
+                {dict.text2}
+                <br />
+                {dict.text2b}
               </p>
             </div>
 
@@ -170,7 +178,7 @@ export default function Contacts() {
               rel="noopener noreferrer"
               className="contacts__telegram"
             >
-              НАПИСАТИ В TELEGRAM
+              {dict.telegram}
             </a>
           </div>
         </div>
@@ -181,14 +189,16 @@ export default function Contacts() {
           <div className="footer-links__grid">
             {footerLinks.map((l) => (
               <a
-                key={l.label}
+                key={l.key}
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-links__item"
               >
                 <div className="footer-links__top">
-                  <span className="footer-links__label">{l.label}</span>
+                  <span className="footer-links__label">
+                    {dict.footerLabels?.[l.key] ?? l.key}
+                  </span>
                   <span className="footer-links__arrow">↗</span>
                 </div>
                 <span className="footer-links__value">{l.value}</span>
@@ -202,7 +212,7 @@ export default function Contacts() {
         <div className="contacts-marquee__track">
           {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="contacts-marquee__item">
-              ДОСТУПНА ДЛЯ ФРИЛАНС-ПРОЄКТІВ
+              {dict.marquee}
               <span className="contacts-marquee__star">✦</span>
             </span>
           ))}

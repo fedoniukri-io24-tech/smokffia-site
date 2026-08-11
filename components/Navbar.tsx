@@ -1,21 +1,47 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import type { Locale } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/get-dictionary";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const links = [
-  { label: "Роботи", href: "#projects" },
-  { label: "Про мене", href: "#about" },
-  { label: "Процес", href: "#process" },
-  { label: "Контакти", href: "#contacts" },
-];
+type Props = {
+  locale: Locale;
+  dict: Dictionary["nav"];
+};
 
-export default function Navbar() {
+export default function Navbar({ locale, dict }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const base = `/${locale}`;
+
+  const links = [
+    { label: dict.works, href: `${base}#projects` },
+    { label: dict.about, href: `${base}#about` },
+    { label: dict.process, href: `${base}#process` },
+    { label: dict.contacts, href: `${base}#contacts` },
+  ];
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <nav className="navbar">
-      <a href="#" className="navbar__logo" aria-label="SMOKFFIA">
+      <Link href={base} className="navbar__logo" aria-label="SMOKFFIA">
         <Image
           src="/images/logo.svg"
           alt="SMOKFFIA"
@@ -23,7 +49,7 @@ export default function Navbar() {
           height={24}
           priority
         />
-      </a>
+      </Link>
 
       <ul className="navbar__links">
         {links.map((l) => (
@@ -35,36 +61,76 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <a href="#contacts" className="navbar__cta btn-nav">
-        Написати мені →
-      </a>
-
-      <button
-        className="navbar__burger"
-        onClick={() => setMobileOpen((v) => !v)}
-        aria-label="Меню"
-      >
-        {mobileOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
-      </button>
+      <div className="navbar__right">
+        <div className="navbar__lang-desktop">
+          <LanguageSwitcher locale={locale} variant="compact" />
+        </div>
+        <a href={`${base}#contacts`} className="navbar__cta btn-nav">
+          {dict.cta}
+        </a>
+        <button
+          className="navbar__burger"
+          onClick={() => setMobileOpen(true)}
+          aria-label={dict.menu}
+          aria-expanded={mobileOpen}
+        >
+          <Menu size={28} strokeWidth={2.5} />
+        </button>
+      </div>
 
       {mobileOpen && (
-        <div className="navbar__mobile">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
+        <div className="navbar__mobile" role="dialog" aria-modal="true">
+          <div className="navbar__mobile-top">
+            <Link
+              href={base}
+              className="navbar__logo"
+              aria-label="SMOKFFIA"
               onClick={() => setMobileOpen(false)}
-              className="navbar__mobile-link"
             >
-              {l.label}
-            </a>
-          ))}
+              <Image
+                src="/images/logo.svg"
+                alt="SMOKFFIA"
+                width={137}
+                height={24}
+              />
+            </Link>
+            <button
+              className="navbar__mobile-close"
+              onClick={() => setMobileOpen(false)}
+              aria-label={dict.close}
+            >
+              <X size={32} strokeWidth={2.5} />
+            </button>
+          </div>
+
+          <div className="navbar__mobile-links">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                onClick={() => setMobileOpen(false)}
+                className="navbar__mobile-link"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="navbar__mobile-lang">
+            <p className="navbar__mobile-lang-label">{dict.language}</p>
+            <LanguageSwitcher
+              locale={locale}
+              variant="menu"
+              onSelect={() => setMobileOpen(false)}
+            />
+          </div>
+
           <a
-            href="#contacts"
+            href={`${base}#contacts`}
             onClick={() => setMobileOpen(false)}
             className="btn-nav navbar__mobile-cta"
           >
-            Написати мені →
+            {dict.cta}
           </a>
         </div>
       )}

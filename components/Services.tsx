@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Check } from "lucide-react";
+import type { Locale } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/get-dictionary";
 
 type Plan = {
   name: string;
@@ -9,161 +11,26 @@ type Plan = {
   features: string[];
 };
 
-const categories = [
-  "WEB DESIGN",
-  "APP DESIGN",
-  "BRANDING",
-  "GRAPHIC DESIGN",
-] as const;
-
-type Category = (typeof categories)[number];
-
-const plansByCategory: Record<Category, Plan[]> = {
-  "WEB DESIGN": [
-    {
-      name: "LANDING PAGE",
-      price: "$50",
-      features: [
-        "Індивідуальний UI дизайн",
-        "Адаптивна верстка",
-        "До 5 секцій",
-        "2 раунди правок",
-        "Бізнес-сайт",
-      ],
-    },
-    {
-      name: "BUSINESS WEBSITE",
-      price: "$120",
-      popular: true,
-      features: [
-        "Landing page",
-        "До 8 сторінок",
-        "Індивідуальні компоненти",
-        "Адаптивний дизайн",
-        "Форма зворотного зв'язку",
-        "3 раунди правок",
-      ],
-    },
-    {
-      name: "LANDING PAGE",
-      price: "$250",
-      features: [
-        "Безлімітні сторінки",
-        "Преміум UI/UX",
-        "Розширені анімації",
-        "Повністю адаптивний",
-        "Структура, готова до SEO",
-        "Пріоритетна підтримка",
-        "Безлімітні правки",
-      ],
-    },
-  ],
-  "APP DESIGN": [
-    {
-      name: "APP DESIGN",
-      price: "від $60",
-      features: [
-        "Сучасний UI/UX дизайн",
-        "Інтерактивний прототип",
-        "Адаптивні компоненти",
-        "Файл джерела Figma",
-      ],
-    },
-    {
-      name: "FULL APP DESIGN",
-      price: "від $180",
-      popular: true,
-      features: [
-        "Комплексний мобільний додаток",
-        "Дизайн-система",
-        "Інтерактивний прототип",
-        "Передача для розробників",
-        "Безлімітні правки",
-      ],
-    },
-  ],
-  BRANDING: [
-    {
-      name: "LOGO DESIGN",
-      price: "$30",
-      features: [
-        "3 концепції логотипу",
-        "Файли високої роздільної здатності",
-        "PNG + SVG + PDF",
-        "Комерційне використання",
-      ],
-    },
-    {
-      name: "BRAND IDENTITY",
-      price: "$60",
-      popular: true,
-      features: [
-        "Дизайн логотипу",
-        "Колірна палітра",
-        "Система типографіки",
-        "Брендові настанови",
-        "Аватарки для соціальних мереж",
-      ],
-    },
-    {
-      name: "BRAND IDENTITY + STICKER PACK",
-      price: "$90",
-      features: [
-        "Усе, що в Brand Identity",
-        "Набір наклейок на замовлення",
-        "Готово до друку та цифрового використання",
-      ],
-    },
-  ],
-  "GRAPHIC DESIGN": [
-    {
-      name: "SOCIAL MEDIA DESIGN",
-      price: "від $15",
-      popular: true,
-      features: [
-        "Індивідуальний дизайн",
-        "Висока роздільна здатність",
-        "Оптимізовано для платформ",
-        "Редагований вихідний файл",
-      ],
-    },
-    {
-      name: "POSTERS & FLYERS",
-      price: "від $20",
-      features: [
-        "Готово до друку",
-        "Сучасний макет",
-        "Висока роздільна здатність",
-        "Вихідний файл включено",
-      ],
-    },
-    {
-      name: "BANNERS & ADS",
-      price: "від $15",
-      features: [
-        "Оптимізовано для вебу",
-        "Різні розміри",
-        "Високоякісний експорт",
-      ],
-    },
-  ],
+type ServicesProps = {
+  dict: Dictionary["services"];
+  locale: Locale;
 };
 
-export default function Services() {
-  const [active, setActive] = useState<Category>("WEB DESIGN");
-  const plans = plansByCategory[active];
+export default function Services({ dict, locale }: ServicesProps) {
+  const categories = dict.categories;
+  const [active, setActive] = useState(categories[0] ?? "");
+  const plansByCategory = dict.plans as Record<string, Plan[]>;
+  const plans = plansByCategory[active] ?? [];
+  const contactsHref = `/${locale}#contacts`;
 
   return (
     <section id="services" className="services">
       <div className="container">
         <h2 className="services__title">
-          ПОСЛУГИ{" "}
-          <span className="services__title-badge">&amp; ЦІНИ</span>
+          {dict.title}{" "}
+          <span className="services__title-badge">{dict.titleBadge}</span>
         </h2>
-        <p className="services__subtitle">
-          Оберіть ідеальний пакет для свого проєкту — і втілимо ваші ідеї в
-          життя.
-        </p>
+        <p className="services__subtitle">{dict.subtitle}</p>
 
         <div className="services__tabs" role="tablist">
           {categories.map((c) => (
@@ -192,7 +59,7 @@ export default function Services() {
                 className={`price-card ${tilt}${plan.popular ? " price-card--popular" : ""}`}
               >
                 {plan.popular && (
-                  <div className="price-card__badge">ПОПУЛЯРНЕ</div>
+                  <div className="price-card__badge">{dict.popular}</div>
                 )}
                 <h3 className="price-card__name">{plan.name}</h3>
                 <p className="price-card__price">{plan.price}</p>
@@ -215,24 +82,22 @@ export default function Services() {
         </div>
 
         <div className="services__cta">
-          <a href="#contacts" className="btn-order">
-            ЗАМОВИТИ ДИЗАЙН
+          <a href={contactsHref} className="btn-order">
+            {dict.order}
           </a>
         </div>
 
         <div className="services__banner">
           <div className="services__banner-copy">
-            <h3 className="services__banner-title">
-              ПОТРІБНО ЩОСЬ УНІКАЛЬНЕ?
-            </h3>
+            <h3 className="services__banner-title">{dict.bannerTitle}</h3>
             <p className="services__banner-text">
-              Індивідуальна вартість залежить від обсягу проєкту.
+              {dict.bannerText}
               <br />
-              Напишіть мені — і я підготую пропозицію під ваш запит
+              {dict.bannerText2}
             </p>
           </div>
-          <a href="#contacts" className="btn-quote">
-            ОТРИМАТИ ВАРТІСТЬ
+          <a href={contactsHref} className="btn-quote">
+            {dict.quote}
           </a>
         </div>
       </div>

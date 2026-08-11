@@ -1,0 +1,364 @@
+{
+  "seo": {
+    "title": "Diseño web, landing pages y UI/UX | SMOKFFIA — Sofía",
+    "description": "Encarga el diseño de un sitio web, landing o app a SMOKFFIA (Sofía) — diseñadora UI/UX y web. Diseño web moderno, branding, Figma, design systems. Freelance para negocios de Ucrania y del mundo.",
+    "keywords": [
+      "diseño web",
+      "contratar diseño web",
+      "diseño de landing page",
+      "encargar landing",
+      "diseño de sitios",
+      "diseñador web",
+      "diseñadora web",
+      "diseñadora UI UX",
+      "diseñadora UI/UX",
+      "diseño UI UX",
+      "diseño de interfaces",
+      "diseño de app",
+      "app design",
+      "branding",
+      "identidad visual",
+      "design system",
+      "diseño gráfico",
+      "portfolio de diseño",
+      "diseñadora Figma",
+      "diseño en Figma",
+      "investigación UX",
+      "prototipado",
+      "diseño de sitio corporativo",
+      "diseño de tienda online",
+      "diseñadora Ucrania",
+      "diseñadora freelance",
+      "contratar diseñadora",
+      "diseño web Ucrania",
+      "UI UX designer Ukraine",
+      "SMOKFFIA",
+      "Sofía diseñadora",
+      "Sofia UI UX",
+      "web design",
+      "landing page design",
+      "UI UX designer",
+      "freelance web designer",
+      "branding designer",
+      "website redesign"
+    ]
+  },
+  "nav": {
+    "works": "Trabajos",
+    "about": "Sobre mí",
+    "process": "Proceso",
+    "contacts": "Contacto",
+    "cta": "Escríbeme →",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "DISEÑADORA UI/UX / DISEÑADORA WEB / DESARROLLADORA CREATIVA",
+    "wordI": "YO",
+    "wordCreateBefore": "CRE",
+    "wordCreateAfter": "",
+    "wordDesign": "DISEÑO,",
+    "wordThat": "QUE",
+    "wordMemorable": "SE RECUERDA",
+    "cta": "VER PROYECTOS",
+    "photoAlt": "Sofía"
+  },
+  "about": {
+    "hello": "¡Hola!",
+    "name": "Soy Sofía — diseñadora UI/UX.",
+    "nameMobile": "¡Hola! Soy Sofía — diseñadora UI/UX y web.",
+    "text": "Ayudo a marcas, empresas y startups a crear productos digitales que unen estilo, funcionalidad y una experiencia de usuario clara. Para mí, el diseño no es solo una imagen bonita. Es una herramienta que ayuda al negocio a alcanzar sus objetivos — y a las personas a interactuar con el producto con facilidad.",
+    "note": "Cada proyecto empieza con investigación, decisiones pensadas y atención al detalle.",
+    "tagsDesktop": ["WEB DESIGN", "BRANDING", "GRAPHIC DESIGN"],
+    "tagsMobile": ["WEB DESIGN", "UI/UX", "BRANDING", "GRAPHIC DESIGN"],
+    "stats": [
+      { "value": "2+", "label": "AÑOS DE EXPERIENCIA COMERCIAL" },
+      { "value": "10+", "label": "PROYECTOS" },
+      { "value": "3", "label": "PAÍSES" }
+    ],
+    "statsMobile": [
+      { "value": "10+", "label": "PROYECTOS" },
+      { "value": "2+", "label": "AÑOS DE EXPERIENCIA COMERCIAL" },
+      { "value": "3", "label": "PAÍSES" }
+    ],
+    "photoAlt": "Sofía"
+  },
+  "services": {
+    "title": "SERVICIOS",
+    "titleBadge": "& PRECIOS",
+    "subtitle": "Elige el paquete ideal para tu proyecto — y hagamos realidad tus ideas.",
+    "popular": "POPULAR",
+    "order": "PEDIR DISEÑO",
+    "bannerTitle": "¿NECESITAS ALGO ÚNICO?",
+    "bannerText": "El precio individual depende del alcance del proyecto.",
+    "bannerText2": "Escríbeme — y prepararé una propuesta a medida de tu brief",
+    "quote": "OBTENER PRESUPUESTO",
+    "categories": ["WEB DESIGN", "APP DESIGN", "BRANDING", "GRAPHIC DESIGN"],
+    "plans": {
+      "WEB DESIGN": [
+        {
+          "name": "LANDING PAGE",
+          "price": "$50",
+          "features": [
+            "UI design a medida",
+            "Maquetación responsive",
+            "Hasta 5 secciones",
+            "2 rondas de revisiones",
+            "Sitio de negocio"
+          ]
+        },
+        {
+          "name": "BUSINESS WEBSITE",
+          "price": "$120",
+          "popular": true,
+          "features": [
+            "Landing page",
+            "Hasta 8 páginas",
+            "Componentes a medida",
+            "Diseño responsive",
+            "Formulario de contacto",
+            "3 rondas de revisiones"
+          ]
+        },
+        {
+          "name": "LANDING PAGE",
+          "price": "$250",
+          "features": [
+            "Páginas ilimitadas",
+            "UI/UX premium",
+            "Animaciones avanzadas",
+            "Totalmente responsive",
+            "Estructura lista para SEO",
+            "Soporte prioritario",
+            "Revisiones ilimitadas"
+          ]
+        }
+      ],
+      "APP DESIGN": [
+        {
+          "name": "APP DESIGN",
+          "price": "desde $60",
+          "features": [
+            "UI/UX design moderno",
+            "Prototipo interactivo",
+            "Componentes responsive",
+            "Archivo fuente Figma"
+          ]
+        },
+        {
+          "name": "FULL APP DESIGN",
+          "price": "desde $180",
+          "popular": true,
+          "features": [
+            "App móvil completa",
+            "Design system",
+            "Prototipo interactivo",
+            "Entrega para desarrolladores",
+            "Revisiones ilimitadas"
+          ]
+        }
+      ],
+      "BRANDING": [
+        {
+          "name": "LOGO DESIGN",
+          "price": "$30",
+          "features": [
+            "3 conceptos de logo",
+            "Archivos en alta resolución",
+            "PNG + SVG + PDF",
+            "Uso comercial"
+          ]
+        },
+        {
+          "name": "BRAND IDENTITY",
+          "price": "$60",
+          "popular": true,
+          "features": [
+            "Diseño de logo",
+            "Paleta de color",
+            "Sistema tipográfico",
+            "Guía de marca",
+            "Avatares para redes sociales"
+          ]
+        },
+        {
+          "name": "BRAND IDENTITY + STICKER PACK",
+          "price": "$90",
+          "features": [
+            "Todo lo de Brand Identity",
+            "Pack de stickers a medida",
+            "Listo para impresión y digital"
+          ]
+        }
+      ],
+      "GRAPHIC DESIGN": [
+        {
+          "name": "SOCIAL MEDIA DESIGN",
+          "price": "desde $15",
+          "popular": true,
+          "features": [
+            "Diseño a medida",
+            "Alta resolución",
+            "Optimizado por plataformas",
+            "Archivo fuente editable"
+          ]
+        },
+        {
+          "name": "POSTERS & FLYERS",
+          "price": "desde $20",
+          "features": [
+            "Listo para impresión",
+            "Layout moderno",
+            "Alta resolución",
+            "Archivo fuente incluido"
+          ]
+        },
+        {
+          "name": "BANNERS & ADS",
+          "price": "desde $15",
+          "features": [
+            "Optimizado para web",
+            "Varios tamaños",
+            "Exportación de alta calidad"
+          ]
+        }
+      ]
+    }
+  },
+  "projects": {
+    "titleMoi": "MIS",
+    "titleProjects": "PROYECTOS",
+    "viewProject": "VER PROYECTO",
+    "viewAll": "VER TODOS LOS TRABAJOS",
+    "items": [
+      {
+        "title": "BUTENKO FIT",
+        "tags": ["UI/UX", "WEB DESIGN", "FITNESS"],
+        "desc": "Un programa online para mujeres que combina entrenamiento, cuidado de la salud y un enfoque moderno del bienestar físico y mental.",
+        "services": "investigación ux - ui design - design system"
+      },
+      {
+        "title": "TRADE GROUND",
+        "tags": ["UI/UX", "APP DESIGN", "MARKETPLACE"],
+        "desc": "Un marketplace completo en Telegram: bot y mini-app donde puedes comprar y vender sin salir del mensajero.",
+        "services": "investigación ux - ui design - design system"
+      },
+      {
+        "title": "NIEZNANY PIEKARZ",
+        "tags": ["UI/UX", "BAKERY"],
+        "desc": "Una plataforma donde reservar un taller de pastelería en Polonia toma solo unos clics — sin llamadas ni esperas.",
+        "services": "investigación ux - ui design - design system"
+      }
+    ],
+    "marquee": ["GRAPHIC DESIGN", "UI/IX", "WEB DESIGN", "BRANDING"]
+  },
+  "process": {
+    "title": "PROCESO",
+    "titlePink": "DE TRABAJO",
+    "steps": [
+      {
+        "num": "01",
+        "title": "DESCUBRIMIENTO",
+        "desc": "Reunión inicial, objetivos, audiencia objetivo y restricciones."
+      },
+      {
+        "num": "02",
+        "title": "INVESTIGACIÓN",
+        "desc": "Auditoría, análisis de referencias, moodboards e insights clave."
+      },
+      {
+        "num": "03",
+        "title": "PROTOTIPOS DE ESTRUCTURA",
+        "desc": "Estructura, flujos de usuario y maquetas de baja fidelidad."
+      },
+      {
+        "num": "04",
+        "title": "DISEÑO VISUAL",
+        "desc": "Tipografía, color y composición."
+      },
+      {
+        "num": "05",
+        "title": "UI KIT",
+        "desc": "Componentes, estados de elementos y reglas del design system."
+      },
+      {
+        "num": "06",
+        "title": "LANZAMIENTO",
+        "desc": "Entrega del proyecto, control de calidad (QA) y un lanzamiento seguro."
+      }
+    ]
+  },
+  "skills": {
+    "titleLine": "SKILLS &",
+    "titleOutline": "SOFTWARE",
+    "items": [
+      "FIGMA",
+      "WEBFLOW",
+      "USER FLOWS",
+      "FRAMER",
+      "DESIGN SYSTEMS",
+      "WIREFRAMING",
+      "ILLUSTRATOR"
+    ]
+  },
+  "reviews": {
+    "titleOutline": "RESEÑAS",
+    "titleLime": "DE CLIENTES",
+    "items": [
+      {
+        "text": "Trabajar juntas fue fácil y cómodo. Todos los deseos se tuvieron en cuenta y el resultado cumplió por completo nuestras expectativas. El diseño quedó moderno, claro y pensado hasta el detalle.",
+        "name": "MARGARYTA VITIAZ",
+        "role": "Artista"
+      },
+      {
+        "text": "En nuestros proyectos conjuntos hemos desarrollado muchos sitios, y cada vez salieron muy bien hechos. ¡Siempre encantado de recomendar a esta especialista a nuevos contactos que la necesiten!",
+        "name": "ROMAN FEDONIUK",
+        "role": "Programador, TeleBots Founder"
+      },
+      {
+        "text": "Excelente comunicación y profesionalismo. Todas las etapas del trabajo fueron transparentes y el resultado final fue exactamente como yo quería. ¡Lo recomiendo sin dudarlo!",
+        "name": "ARTEM KOLOS",
+        "role": "Tutor, freelancer"
+      },
+      {
+        "text": "Estoy encantada — fue muy fácil comunicarnos y todas mis ideas fueron escuchadas y tenidas en cuenta. El diseño quedó con estilo y moderno. El proceso fue muy cómodo y el resultado superó las expectativas.",
+        "name": "POLINA IZOTOVA",
+        "role": "Diseñadora gráfica"
+      }
+    ]
+  },
+  "contacts": {
+    "heading": "CONTACTO",
+    "text1": "¿Necesitas un diseño moderno de sitio,",
+    "text1b": "landing o servicio web?",
+    "text2": "Cuéntame sobre tu proyecto y me pondré",
+    "text2b": "en contacto contigo muy pronto.",
+    "telegram": "ESCRIBIR EN TELEGRAM",
+    "name": "NOMBRE",
+    "phone": "TELÉFONO",
+    "message": "TU CONSULTA",
+    "placeholder": "describe brevemente tu proyecto",
+    "submit": "ENVIAR",
+    "sending": "ENVIANDO...",
+    "success": "¡Mensaje enviado!",
+    "successSub": "Me pondré en contacto pronto.",
+    "error": "No se pudo enviar. Inténtalo de nuevo o escríbeme por Telegram.",
+    "marquee": "DISPONIBLE PARA PROYECTOS FREELANCE",
+    "footerLabels": {
+      "EMAIL": "EMAIL",
+      "FIVERR": "FIVERR",
+      "BEHANCE": "BEHANCE",
+      "LINKEDIN": "LINKEDIN",
+      "INSTAGRAM": "INSTAGRAM"
+    }
+  },
+  "notFound": {
+    "brand": "SMOKFFIA",
+    "code": "404",
+    "title": "Página no encontrada",
+    "text": "Parece que esta URL se perdió entre los prototipos. Vuelve al inicio — allí están el portfolio, los servicios y el contacto.",
+    "home": "IR AL INICIO",
+    "write": "Escríbeme →"
+  }
+}

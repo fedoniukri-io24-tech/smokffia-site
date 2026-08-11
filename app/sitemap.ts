@@ -1,21 +1,30 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
+import { locales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return [
-    {
-      url: siteConfig.url,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
+  const homeEntries = locales.map((locale) => ({
+    url: `${siteConfig.url}/${locale}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: locale === "uk" ? 1 : 0.9,
+    alternates: {
+      languages: Object.fromEntries(
+        locales.map((l) => [l, `${siteConfig.url}/${l}`]),
+      ),
     },
-    ...siteConfig.sections.map((section, index) => ({
-      url: `${siteConfig.url}${section.path}`,
+  }));
+
+  const sectionEntries = locales.flatMap((locale) =>
+    siteConfig.sections.map((section, index) => ({
+      url: `${siteConfig.url}/${locale}${section.path}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: Math.max(0.6, 0.9 - index * 0.05),
+      priority: Math.max(0.5, 0.8 - index * 0.05),
     })),
-  ];
+  );
+
+  return [...homeEntries, ...sectionEntries];
 }

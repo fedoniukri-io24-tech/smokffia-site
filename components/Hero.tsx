@@ -1,22 +1,25 @@
 "use client";
 import Image from "next/image";
+import type { Locale } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/get-dictionary";
 
-export default function Hero() {
+type HeroProps = {
+  dict: Dictionary["hero"];
+  locale: Locale;
+};
+
+export default function Hero({ dict, locale }: HeroProps) {
+  const projectsHref = `/${locale}#projects`;
+
   return (
     <section className="hero">
       <div className="container container--wide hero__inner">
         <div className="hero__content">
-          <div className="hero__lang">
-            UA <span className="hero__lang-arrow">↓</span>
-          </div>
-
-          <p className="hero__eyebrow">
-            UI/UX-ДИЗАЙНЕРКА / ВЕБДИЗАЙНЕРКА / КРЕАТИВНА РОЗРОБНИЦЯ
-          </p>
+          <p className="hero__eyebrow">{dict.eyebrow}</p>
 
           <h1 className="hero__title">
             <span className="hero__title-row">
-              <span className="hero__word">Я</span>
+              <span className="hero__word">{dict.wordI}</span>
               <span className="hero__inline-img hero__inline-img--cat">
                 <Image
                   src="/images/hero-cat.jpg"
@@ -27,7 +30,7 @@ export default function Hero() {
                 />
               </span>
               <span className="hero__word hero__word--create">
-                СТВ
+                {dict.wordCreateBefore}
                 <Image
                   src="/images/letter-o.png"
                   alt=""
@@ -35,16 +38,16 @@ export default function Hero() {
                   height={51}
                   className="hero__o-icon"
                 />
-                РЮЮ
+                {dict.wordCreateAfter}
               </span>
             </span>
 
             <span className="hero__title-row">
               <span className="hero__word-design">
                 <span className="hero__word-design__outline" aria-hidden="true">
-                  ДИЗАЙН,
+                  {dict.wordDesign}
                 </span>
-                <span className="hero__word-design__fill">ДИЗАЙН,</span>
+                <span className="hero__word-design__fill">{dict.wordDesign}</span>
               </span>
               <span className="hero__inline-img hero__inline-img--girl">
                 <Image
@@ -55,11 +58,13 @@ export default function Hero() {
                   priority
                 />
               </span>
-              <span className="hero__word">ЯКИЙ</span>
+              <span className="hero__word">{dict.wordThat}</span>
             </span>
 
             <span className="hero__title-row hero__title-row--full">
-              <span className="hero__word hero__word--full">ЗАПАМ&apos;ЯТОВУЄТЬСЯ</span>
+              <span className="hero__word hero__word--full">
+                {dict.wordMemorable}
+              </span>
             </span>
           </h1>
 
@@ -72,8 +77,8 @@ export default function Hero() {
               className="hero__moon"
             />
             <div className="hero__cta-wrap">
-              <a href="#projects" className="btn-hero">
-                ПЕРЕГЛЯНУТИ ПРОЄКТИ
+              <a href={projectsHref} className="btn-hero">
+                {dict.cta}
               </a>
               <Image
                 src="/images/cursor.svg"
@@ -91,7 +96,7 @@ export default function Hero() {
           <div className="hero__photo">
             <Image
               src="/images/sofia-hero.jpg"
-              alt="Sofia"
+              alt={dict.photoAlt}
               fill
               sizes="(max-width: 768px) 90vw, 420px"
               style={{ objectFit: "cover" }}
@@ -119,8 +124,8 @@ export default function Hero() {
 
         <div className="hero__actions hero__actions--mobile">
           <div className="hero__cta-wrap">
-            <a href="#projects" className="btn-hero">
-              ПЕРЕГЛЯНУТИ ПРОЄКТИ
+            <a href={projectsHref} className="btn-hero">
+              {dict.cta}
             </a>
             <Image
               src="/images/cursor.svg"

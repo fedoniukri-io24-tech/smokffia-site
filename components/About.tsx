@@ -1,22 +1,12 @@
 "use client";
 import Image from "next/image";
+import type { Dictionary } from "@/lib/get-dictionary";
 
-const tagsDesktop = ["WEB DESIGN", "BRANDING", "GRAPHIC DESIGN"];
-const tagsMobile = ["WEB DESIGN", "UI/UX", "BRANDING", "GRAPHIC DESIGN"];
+type AboutProps = {
+  dict: Dictionary["about"];
+};
 
-const statsDesktop = [
-  { value: "2+", label: "КОМЕРЦІЙНОГО ДОСВІДУ" },
-  { value: "10+", label: "ПРОЄКТІВ" },
-  { value: "3", label: "КРАЇНИ" },
-];
-
-const statsMobile = [
-  { value: "10+", label: "ПРОЄКТІВ" },
-  { value: "2+", label: "КОМЕРЦІЙНОГО ДОСВІДУ" },
-  { value: "3", label: "КРАЇНИ" },
-];
-
-export default function About() {
+export default function About({ dict }: AboutProps) {
   return (
     <section id="about" className="about">
       <div className="about__edge about__edge--top" aria-hidden>
@@ -44,7 +34,7 @@ export default function About() {
                 <div className="about__avatar">
                   <Image
                     src="/images/sofia-about.png"
-                    alt="Софія"
+                    alt={dict.photoAlt}
                     fill
                     sizes="(max-width: 768px) 70vw, 400px"
                     style={{ objectFit: "cover" }}
@@ -58,15 +48,13 @@ export default function About() {
               <div className="about__heading-row">
                 <div className="about__heading">
                   <h2 className="about__title about__title--desktop">
-                    <span className="about__hello">Привіт!</span>
-                    <span className="about__name">
-                      Я Софія — UI/UX дизайнерка.
-                    </span>
+                    <span className="about__hello">{dict.hello}</span>
+                    <span className="about__name">{dict.name}</span>
                   </h2>
 
                   <h2 className="about__title about__title--mobile">
                     <span className="about__name about__name--mobile">
-                      Привіт! Я Софія — UI/UX та вебдизайнерка.
+                      {dict.nameMobile}
                     </span>
                   </h2>
                 </div>
@@ -82,28 +70,19 @@ export default function About() {
                 </div>
               </div>
 
-              <p className="about__text">
-                Я допомагаю брендам, компаніям і стартапам створювати цифрові
-                продукти, які поєднують стиль, функціональність та зрозумілий
-                користувацький досвід. Для мене дизайн — це не лише гарна
-                картинка. Це інструмент, який допомагає бізнесу досягати своїх
-                цілей, а людям — легко взаємодіяти з продуктом.
-              </p>
-              <p className="about__note">
-                Кожен проєкт починається з дослідження, продуманих рішень і
-                уваги до деталей.
-              </p>
+              <p className="about__text">{dict.text}</p>
+              <p className="about__note">{dict.note}</p>
 
               <div className="about__tags about__tags--desktop">
                 <span className="about__tag about__tag--spacer" aria-hidden />
-                {tagsDesktop.map((t) => (
+                {dict.tagsDesktop.map((t) => (
                   <span key={t} className="about__tag">
                     {t}
                   </span>
                 ))}
               </div>
               <div className="about__tags about__tags--mobile">
-                {tagsMobile.map((t) => (
+                {dict.tagsMobile.map((t) => (
                   <span key={t} className="about__tag">
                     {t}
                   </span>
@@ -114,7 +93,7 @@ export default function About() {
 
               <div className="about__stats-row">
                 <div className="about__stats about__stats--desktop">
-                  {statsDesktop.map((s) => (
+                  {dict.stats.map((s) => (
                     <div key={s.label} className="about__stat">
                       <p className="about__stat-value">{s.value}</p>
                       <p className="about__stat-label">{s.label}</p>
@@ -122,7 +101,7 @@ export default function About() {
                   ))}
                 </div>
                 <div className="about__stats about__stats--mobile">
-                  {statsMobile.map((s) => (
+                  {dict.statsMobile.map((s) => (
                     <div key={s.label} className="about__stat">
                       <p className="about__stat-value">{s.value}</p>
                       <p className="about__stat-label">{s.label}</p>

@@ -45,7 +45,7 @@ export function getPersonJsonLd() {
       "Prototyping",
       "Website Redesign",
     ],
-    knowsLanguage: ["uk", "en"],
+    knowsLanguage: ["uk", "en", "pl", "de", "es"],
     hasOccupation: {
       "@type": "Occupation",
       name: "UI/UX Designer",
@@ -88,13 +88,13 @@ export function getOrganizationJsonLd() {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: siteConfig.email,
-      url: `${siteConfig.url}/#contacts`,
-      availableLanguage: ["Ukrainian", "English"],
+      url: `${siteConfig.url}/uk#contacts`,
+      availableLanguage: ["Ukrainian", "English", "Polish", "German", "Spanish"],
     },
   };
 }
 
-export function getWebsiteJsonLd() {
+export function getWebsiteJsonLd(locale = "uk") {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -103,11 +103,11 @@ export function getWebsiteJsonLd() {
     alternateName: [
       "SMOKFFIA Design",
       "Дизайн сайтів SMOKFFIA",
-      "Софія UI/UX",
+      "Sofia UI/UX",
     ],
     url: siteConfig.url,
     description: siteConfig.description,
-    inLanguage: ["uk", "en"],
+    inLanguage: ["uk", "en", "pl", "de", "es"],
     publisher: { "@id": `${siteConfig.url}/#organization` },
     creator: { "@id": `${siteConfig.url}/#person` },
     copyrightHolder: { "@id": `${siteConfig.url}/#person` },
@@ -121,13 +121,13 @@ export function getWebsiteJsonLd() {
     potentialAction: [
       {
         "@type": "CommunicateAction",
-        name: "Замовити дизайн сайту",
-        target: `${siteConfig.url}/#contacts`,
+        name: "Order website design",
+        target: `${siteConfig.url}/${locale}#contacts`,
       },
       {
         "@type": "ViewAction",
-        name: "Переглянути портфоліо",
-        target: `${siteConfig.url}/#projects`,
+        name: "View portfolio",
+        target: `${siteConfig.url}/${locale}#projects`,
       },
     ],
   };
@@ -154,7 +154,7 @@ export function getProfessionalServiceJsonLd() {
         name: "Worldwide",
       },
     ],
-    availableLanguage: ["uk", "en"],
+    availableLanguage: ["uk", "en", "pl", "de", "es"],
     priceRange: "$$",
     currenciesAccepted: "USD, UAH, EUR",
     provider: { "@id": `${siteConfig.url}/#person` },
@@ -227,48 +227,51 @@ export function getProfessionalServiceJsonLd() {
   };
 }
 
-export function getBreadcrumbJsonLd() {
+export function getBreadcrumbJsonLd(locale = "uk") {
+  const home = `${siteConfig.url}/${locale}`;
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": `${siteConfig.url}/#breadcrumb`,
+    "@id": `${home}/#breadcrumb`,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: "Головна",
-        item: siteConfig.url,
+        name: "Home",
+        item: home,
       },
       ...siteConfig.sections.map((section, index) => ({
         "@type": "ListItem",
         position: index + 2,
         name: section.title,
-        item: `${siteConfig.url}${section.path}`,
+        item: `${home}${section.path.replace(/^\//, "")}`,
       })),
     ],
   };
 }
 
-export function getProfilePageJsonLd() {
+export function getProfilePageJsonLd(locale = "uk") {
+  const pageUrl = `${siteConfig.url}/${locale}`;
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "@id": `${siteConfig.url}/#profilepage`,
-    url: siteConfig.url,
+    "@id": `${pageUrl}/#profilepage`,
+    url: pageUrl,
     name: siteConfig.title,
     description: siteConfig.description,
-    inLanguage: "uk",
+    inLanguage: locale,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#person` },
     mainEntity: { "@id": `${siteConfig.url}/#person` },
   };
 }
 
-export function getFaqJsonLd() {
+export function getFaqJsonLd(locale = "uk") {
+  const contactsUrl = `${siteConfig.url}/${locale}#contacts`;
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${siteConfig.url}/#faq`,
+    "@id": `${siteConfig.url}/${locale}/#faq`,
     mainEntity: [
       {
         "@type": "Question",
@@ -291,7 +294,7 @@ export function getFaqJsonLd() {
         name: "Як замовити дизайн лендингу або сайту?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Залиште заявку у формі на сайті (${siteConfig.url}/#contacts), напишіть у Telegram (${siteConfig.telegram}) або на email ${siteConfig.email}.`,
+          text: `Залиште заявку у формі на сайті (${contactsUrl}), напишіть у Telegram (${siteConfig.telegram}) або на email ${siteConfig.email}.`,
         },
       },
       {
@@ -299,7 +302,7 @@ export function getFaqJsonLd() {
         name: "Чи працює дизайнерка з клієнтами з України та інших країн?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Так. SMOKFFIA працює віддалено з клієнтами з України та світу — українською та англійською.",
+          text: "Так. SMOKFFIA працює віддалено з клієнтами з України та світу — українською, англійською, польською, німецькою та іспанською.",
         },
       },
       {

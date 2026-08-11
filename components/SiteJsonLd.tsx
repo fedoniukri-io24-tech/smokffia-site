@@ -8,9 +8,11 @@ import {
   getProfilePageJsonLd,
   getWebsiteJsonLd,
 } from "@/lib/schema";
+import type { Locale } from "@/lib/i18n";
 
-/** Renders a single schema.org @graph payload for SEO */
-export default function SiteJsonLd() {
+type Props = { locale: Locale };
+
+export default function SiteJsonLd({ locale }: Props) {
   const stripContext = (item: Record<string, unknown>) => {
     const { ["@context"]: _ctx, ...rest } = item;
     return rest;
@@ -23,11 +25,11 @@ export default function SiteJsonLd() {
         "@graph": [
           stripContext(getOrganizationJsonLd()),
           stripContext(getPersonJsonLd()),
-          stripContext(getWebsiteJsonLd()),
+          stripContext(getWebsiteJsonLd(locale)),
           stripContext(getProfessionalServiceJsonLd()),
-          stripContext(getProfilePageJsonLd()),
-          stripContext(getBreadcrumbJsonLd()),
-          stripContext(getFaqJsonLd()),
+          stripContext(getProfilePageJsonLd(locale)),
+          stripContext(getBreadcrumbJsonLd(locale)),
+          stripContext(getFaqJsonLd(locale)),
         ],
       }}
     />

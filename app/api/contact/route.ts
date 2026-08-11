@@ -41,6 +41,8 @@ export async function POST(request: Request) {
   const name = String(payload.name ?? "").trim();
   const phone = String(payload.phone ?? "").trim();
   const message = String(payload.message ?? "").trim();
+  const locale =
+    typeof payload.locale === "string" ? payload.locale.trim() : "";
 
   if (!name || !phone) {
     return Response.json(
@@ -67,6 +69,7 @@ export async function POST(request: Request) {
     `<b>Імʼя:</b> ${escapeHtml(name)}`,
     `<b>Телефон:</b> ${escapeHtml(phone)}`,
     `<b>Запит:</b> ${escapeHtml(message || "—")}`,
+    ...(locale ? [`<b>Мова:</b> ${escapeHtml(locale)}`] : []),
   ].join("\n");
 
   try {

@@ -1,53 +1,41 @@
 "use client";
 import Image from "next/image";
+import type { Locale } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/get-dictionary";
 
-const projects = [
-  {
-    title: "BUTENKO FIT",
-    tags: ["UI/UX", "WEB DESIGN", "FITNESS"],
-    desc: "Онлайн-програма для жінок, що поєднує тренування, турботу про здоров'я та сучасний підхід до фізичного й ментального самопочуття.",
-    services: "ux-дослідження - ui дизайн - дизайн-система",
-    link: "#",
+type ProjectsProps = {
+  dict: Dictionary["projects"];
+  locale: Locale;
+};
+
+const projectVisuals: Record<
+  string,
+  { img: string; bg: string; tilt: "left" | "center" | "right" }
+> = {
+  "BUTENKO FIT": {
     img: "/images/project-butenko.png",
     bg: "#E8E0F5",
     tilt: "left",
   },
-  {
-    title: "TRADE GROUND",
-    tags: ["UI/UX", "APP DESIGN", "MARKETPLACE"],
-    desc: "Повноцінний маркетплейс у Telegram: бот і міні-додаток, де можна продавати й купувати товари, не виходячи з месенджера.",
-    services: "ux-дослідження - ui дизайн - дизайн-система",
-    link: "#",
+  "TRADE GROUND": {
     img: "/images/project-trade.png",
     bg: "#C8F070",
     tilt: "center",
   },
-  {
-    title: "NIEZNANY PIEKARZ",
-    tags: ["UI/UX", "BAKERY"],
-    desc: "Платформа, де купити майстер-клас з кондитерства в Польщі можна за кілька кліків — без дзвінків і очікування.",
-    services: "ux-дослідження - ui дизайн - дизайн-система",
-    link: "#",
+  "NIEZNANY PIEKARZ": {
     img: "/images/project-bakery.png",
     bg: "#F5D0D8",
     tilt: "right",
   },
-];
+};
 
-const marqueeItems = [
-  "GRAPHIC DESIGN",
-  "UI/IX",
-  "WEB DESIGN",
-  "BRANDING",
-];
-
-export default function Projects() {
+export default function Projects({ dict }: ProjectsProps) {
   return (
     <section id="projects" className="projects">
       <div className="container container--xl">
         <h2 className="projects__title">
-          <span className="projects__title-moi">МОЇ</span>{" "}
-          <span className="projects__title-lime">ПРОЄКТИ</span>
+          <span className="projects__title-moi">{dict.titleMoi}</span>{" "}
+          <span className="projects__title-lime">{dict.titleProjects}</span>
           <Image
             src="/images/projects-fire.svg"
             alt=""
@@ -58,53 +46,61 @@ export default function Projects() {
         </h2>
 
         <div className="projects__grid">
-          {projects.map((p) => (
-            <article
-              key={p.title}
-              className={`card-project card-project--${p.tilt}`}
-            >
-              <div
-                className="card-project__chrome"
-                style={{ background: p.bg }}
-              >
-                <div className="card-project__bar">
-                  <span className="card-project__dot" />
-                  <span className="card-project__dot" />
-                  <span className="card-project__dot" />
-                </div>
-                <div className="card-project__preview">
-                  <Image
-                    src={p.img}
-                    alt={p.title}
-                    width={375}
-                    height={272}
-                    className="card-project__img"
-                  />
-                </div>
-              </div>
+          {dict.items.map((p) => {
+            const visual = projectVisuals[p.title] ?? {
+              img: "/images/project-butenko.png",
+              bg: "#E8E0F5",
+              tilt: "left" as const,
+            };
 
-              <div className="card-project__body">
-                <div className="card-project__tags">
-                  {p.tags.map((t) => (
-                    <span key={t} className="card-project__tag">
-                      {t}
-                    </span>
-                  ))}
+            return (
+              <article
+                key={p.title}
+                className={`card-project card-project--${visual.tilt}`}
+              >
+                <div
+                  className="card-project__chrome"
+                  style={{ background: visual.bg }}
+                >
+                  <div className="card-project__bar">
+                    <span className="card-project__dot" />
+                    <span className="card-project__dot" />
+                    <span className="card-project__dot" />
+                  </div>
+                  <div className="card-project__preview">
+                    <Image
+                      src={visual.img}
+                      alt={p.title}
+                      width={375}
+                      height={272}
+                      className="card-project__img"
+                    />
+                  </div>
                 </div>
-                <h3 className="card-project__title">{p.title}</h3>
-                <p className="card-project__desc">{p.desc}</p>
-                <p className="card-project__services">{p.services}</p>
-                <a href={p.link} className="card-project__link">
-                  ПЕРЕГЛЯНУТИ ПРОЄКТ <span aria-hidden>→</span>
-                </a>
-              </div>
-            </article>
-          ))}
+
+                <div className="card-project__body">
+                  <div className="card-project__tags">
+                    {p.tags.map((t) => (
+                      <span key={t} className="card-project__tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="card-project__title">{p.title}</h3>
+                  <p className="card-project__desc">{p.desc}</p>
+                  <p className="card-project__services">{p.services}</p>
+                  <a href="#" className="card-project__link">
+                    {dict.viewProject} <span aria-hidden>→</span>
+                  </a>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="projects__all">
           <a href="#" className="projects__all-link">
-            ПЕРЕГЛЯНУТИ ВСІ РОБОТИ
+            {dict.viewAll}
           </a>
         </div>
       </div>
@@ -127,7 +123,7 @@ export default function Projects() {
           <div className="projects-marquee__track">
             {Array.from({ length: 4 }).map((_, i) => (
               <span key={i} className="projects-marquee__item">
-                {marqueeItems.map((item) => (
+                {dict.marquee.map((item) => (
                   <span key={`${i}-${item}`} className="projects-marquee__chunk">
                     {item}
                     <span className="projects-marquee__star">✦</span>

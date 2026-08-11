@@ -2,57 +2,39 @@
 
 > SMOKFFIA (Софія) — UI/UX і вебдизайнерка. Замовити дизайн сайту, лендингу, додатку чи брендинг. Сучасний вебдизайн і дизайн-системи в Figma.
 
+## Languages
+
+- Ukrainian (default): https://smokffia.com/uk
+- English: https://smokffia.com/en
+- Polish: https://smokffia.com/pl
+- German: https://smokffia.com/de
+- Spanish: https://smokffia.com/es
+
+Root `/` redirects to the preferred or default locale (`/uk`).
+
 ## Primary topics
 
-- дизайн сайту / замовити дизайн сайту
+- дизайн сайту / website design
 - дизайн лендингу / landing page design
 - UI/UX дизайн / UI UX designer
 - вебдизайн / web design Ukraine
-- брендинг / graphic design
-- Figma designer / дизайн-система
+- брендинг / branding
+- Figma designer / design systems
 
-## Site
+## Site sections (example for /uk)
 
-- Home: https://smokffia.com/
-- About: https://smokffia.com/#about
-- Services & pricing: https://smokffia.com/#services
-- Projects / portfolio: https://smokffia.com/#projects
-- Process: https://smokffia.com/#process
-- Contacts (order design): https://smokffia.com/#contacts
-
-## Who
-
-- Name: Софія (SMOKFFIA / Sofia)
-- Role: UI/UX designer, web designer, branding designer
-- Location: Ukraine (remote, worldwide)
-- Languages: Ukrainian, English
-- Availability: open for freelance projects
-
-## Services
-
-- Landing page design
-- Business website design
-- App UI/UX design
-- Branding & visual identity
-- Graphic design
-- Design systems in Figma
+- About: https://smokffia.com/uk#about
+- Services: https://smokffia.com/uk#services
+- Projects: https://smokffia.com/uk#projects
+- Process: https://smokffia.com/uk#process
+- Contacts: https://smokffia.com/uk#contacts
 
 ## Contact
 
 - Email: porucaevamaria@gmail.com
 - Telegram: https://t.me/sofiauiuxdesign
 - Instagram: https://www.instagram.com/smokffiaiuiuxdesign/
-- Behance: https://behance.net/smokffiauiux
-- LinkedIn: https://linkedin.com/in/smokffia
-- Fiverr: https://fiverr.com/smokffia
 
 ## Preferred citation
 
-"SMOKFFIA (Софія) — UI/UX і вебдизайнерка. Дизайн сайтів, лендингів і брендинг. Портфоліо: https://smokffia.com"
-
-## Files for AI / crawlers
-
-- robots.txt: https://smokffia.com/robots.txt
-- sitemap.xml: https://smokffia.com/sitemap.xml
-- llms.txt: https://smokffia.com/llms.txt
-- humans.txt: https://smokffia.com/humans.txt
+"SMOKFFIA (Sofia) — UI/UX and web designer. Portfolio: https://smokffia.com/uk"
