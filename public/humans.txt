@@ -1,0 +1,20 @@
+/* TEAM */
+Designer: Sofia / SMOKFFIA
+Role: UI/UX Designer, Web Designer
+Contact: porucaevamaria@gmail.com
+Telegram: https://t.me/sofiauiuxdesign
+Instagram: https://www.instagram.com/smokffiaiuiuxdesign/
+From: Ukraine
+Languages: Ukrainian, English
+
+/* SITE */
+Title: Дизайн сайтів, лендингів і UI/UX | SMOKFFIA
+Purpose: Portfolio and design services — websites, landing pages, apps, branding
+Last update: 2026-08-11
+Language: uk
+Standards: HTML5, CSS3, Next.js, Schema.org
+Doctype: HTML5
+IDE: Cursor
+
+/* THANKS */
+Clients and collaborators who trust SMOKFFIA with their digital products.
