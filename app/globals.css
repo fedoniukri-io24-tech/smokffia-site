@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Unbounded:wght@900&family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap');
 
 :root {
   --black: #0A0A0A;
   --white: #FFFFFF;
   --lime: #CDFF00;
-  --pink: #FF2D9B;
+  --pink: #F629A8;
   --pink-light: #FF69B4;
   --beige: #F0EDE6;
   --gray-dark: #1A1A1A;
@@ -60,6 +60,10 @@ button {
 
 .bebas {
   font-family: 'Bebas Neue', cursive;
+}
+
+.archivo {
+  font-family: 'Archivo Black', sans-serif;
 }
 
 /* ——— Shared ——— */
@@ -580,9 +584,10 @@ button {
 
 .hero__eyebrow {
   display: none;
+  font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--black);
   margin-bottom: 1.25rem;
@@ -594,11 +599,13 @@ button {
   align-items: stretch;
   width: fit-content;
   max-width: 100%;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.9rem, 8vw, 2.7rem);
-  font-weight: 400;
+  font-weight: 900;
   text-transform: uppercase;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--black);
 }
 
 .hero__title-row {
@@ -641,50 +648,56 @@ button {
   vertical-align: middle;
 }
 
-.hero__word-design {
+/* Shared “DESIGN” outline + pink bar style (hero + section titles) */
+.word-design {
   position: relative;
   display: inline-block;
   z-index: 0;
-  margin-right: 0.2rem;
-  padding: 0;
-  line-height: 1.05;
-  font-weight: 800;
+  padding: 0.02em 0.08em 0.06em;
+  line-height: 0.98;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-synthesis: none;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.034em var(--black);
+  paint-order: stroke fill;
   border: none;
   box-shadow: none;
-}
-
-.hero__word-design__outline {
-  position: absolute;
-  left: 0;
-  top: 0;
+  isolation: isolate;
+  vertical-align: baseline;
   white-space: nowrap;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px var(--black);
-  paint-order: stroke fill;
-  pointer-events: none;
-  z-index: 1;
 }
 
-.hero__word-design__fill {
-  position: relative;
-  z-index: 2;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0;
-  text-shadow: none;
-}
-
-.hero__word-design::before {
+.word-design::before {
   content: "";
   position: absolute;
-  left: -0.06em;
-  right: -0.06em;
-  top: 50%;
-  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 48%;
+  bottom: 0.02em;
   background: var(--pink);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
+}
+
+.word-design::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48%;
+  height: 2px;
+  background: var(--black);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__word-design {
+  margin-right: 0.15rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
 }
 
 .hero__inline-img {
@@ -767,7 +780,7 @@ button {
 
 .hero__photo-wrap {
   position: relative;
-  width: min(100%, 320px);
+  width: min(calc(100vw - 1rem), 440px);
   margin-inline: auto;
   margin-top: 0.5rem;
 }
@@ -806,7 +819,7 @@ button {
 .hero__sun {
   position: absolute;
   z-index: 4;
-  width: 58px;
+  width: 68px;
   height: auto;
   pointer-events: none;
 }
@@ -1112,7 +1125,7 @@ button {
   background: var(--pink);
   color: var(--white);
   padding: 4px 16px;
-  border-radius: 6px;
+  border-radius: 0;
   font-style: normal;
   transform: rotate(-3deg);
   box-shadow: 3px 3px 0 var(--black);
@@ -1353,6 +1366,7 @@ button {
   flex-wrap: wrap;
   gap: 0.55rem 0.75rem;
   text-align: center;
+  font-family: 'Archivo Black', 'Unbounded', 'Inter', sans-serif;
   font-size: clamp(2rem, 8vw, 2.75rem);
   font-weight: 900;
   text-transform: uppercase;
@@ -1362,24 +1376,6 @@ button {
 
 .projects__title-moi {
   color: var(--black);
-}
-
-.projects__title-lime {
-  position: relative;
-  display: inline-block;
-  padding: 0.12em 0.28em;
-  color: var(--white);
-  -webkit-text-stroke: 0.045em var(--black);
-  paint-order: stroke fill;
-  z-index: 0;
-}
-
-.projects__title-lime::before {
-  content: "";
-  position: absolute;
-  inset: 0.08em 0.02em;
-  background: var(--lime);
-  z-index: -1;
 }
 
 .projects__fire {
@@ -1641,30 +1637,13 @@ button {
 
 .process__title {
   text-align: center;
+  font-family: 'Archivo Black', 'Unbounded', 'Inter', sans-serif;
   font-size: clamp(2.25rem, 7.5vw, 3rem);
   font-weight: 900;
   text-transform: uppercase;
   line-height: 1.15;
   margin-bottom: 3.25rem;
   color: var(--black);
-}
-
-.process__title-pink {
-  position: relative;
-  display: inline-block;
-  padding: 0.08em 0.28em;
-  color: var(--white);
-  -webkit-text-stroke: 0.045em var(--black);
-  paint-order: stroke fill;
-  z-index: 0;
-}
-
-.process__title-pink::before {
-  content: "";
-  position: absolute;
-  inset: 0.12em 0.02em 0.02em;
-  background: var(--pink);
-  z-index: -1;
 }
 
 .process__timeline {
@@ -1924,6 +1903,7 @@ button {
   flex-wrap: wrap;
   gap: 0.55rem 0.7rem;
   text-align: center;
+  font-family: 'Archivo Black', 'Unbounded', 'Inter', sans-serif;
   font-size: clamp(1.85rem, 6.5vw, 2.6rem);
   font-weight: 900;
   text-transform: uppercase;
@@ -1935,16 +1915,6 @@ button {
   color: transparent;
   -webkit-text-stroke: 0.045em var(--black);
   paint-order: stroke fill;
-}
-
-.reviews__title-lime {
-  display: inline-block;
-  background: var(--lime);
-  color: var(--black);
-  -webkit-text-stroke: 0.04em var(--black);
-  paint-order: stroke fill;
-  padding: 0.08em 0.28em;
-  border-radius: 4px;
 }
 
 .reviews__hand {
@@ -2087,7 +2057,7 @@ button {
 
 .contacts__form-box {
   background: var(--lime);
-  border-radius: 10px;
+  border-radius: 0;
   padding: 2.25rem 1.75rem 2rem;
   position: relative;
   color: var(--black);
@@ -2178,6 +2148,7 @@ button {
   background: var(--pink);
   color: var(--white);
   border: 2.5px solid var(--black);
+  border-radius: 0;
   font-weight: 900;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
@@ -2423,7 +2394,7 @@ button {
 
   .hero__title {
     font-size: clamp(3.15rem, 4.4vw, 4.35rem);
-    letter-spacing: -0.055em;
+    letter-spacing: -0.035em;
   }
 
   .hero__title-row {
@@ -2447,8 +2418,12 @@ button {
     width: 8.25rem;
   }
 
-  .hero__word-design__outline {
-    -webkit-text-stroke-width: 2.5px;
+  .word-design::after {
+    height: 2.5px;
+  }
+
+  .word-design {
+    -webkit-text-stroke-width: 0.03em;
   }
 
   .hero__actions--desktop {
@@ -3014,7 +2989,7 @@ button {
 
   .contacts__form-box {
     padding: 2.9rem 2.65rem 2.65rem;
-    border-radius: 12px;
+    border-radius: 0;
     box-shadow: 10px 10px 0 var(--black);
   }
 
@@ -3070,7 +3045,7 @@ button {
 
   .hero__title {
     font-size: clamp(4rem, 5.1vw, 5.4rem);
-    letter-spacing: -0.06em;
+    letter-spacing: -0.04em;
   }
 
   .hero__inline-img {
@@ -3126,7 +3101,7 @@ button {
 
   .hero__title {
     font-size: 5.1rem;
-    letter-spacing: -0.065em;
+    letter-spacing: -0.045em;
   }
 
   .hero__inline-img--cat {

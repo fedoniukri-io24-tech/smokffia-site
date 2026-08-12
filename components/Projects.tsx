@@ -2,6 +2,7 @@
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
+import WordDesign from "@/components/WordDesign";
 
 type ProjectsProps = {
   dict: Dictionary["projects"];
@@ -35,7 +36,7 @@ export default function Projects({ dict }: ProjectsProps) {
       <div className="container container--xl">
         <h2 className="projects__title">
           <span className="projects__title-moi">{dict.titleMoi}</span>{" "}
-          <span className="projects__title-lime">{dict.titleProjects}</span>
+          <WordDesign>{dict.titleProjects}</WordDesign>
           <Image
             src="/images/projects-fire.svg"
             alt=""

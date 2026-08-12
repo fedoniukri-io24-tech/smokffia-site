@@ -45,10 +45,10 @@
   },
   "nav": {
     "works": "Work",
-    "about": "About",
+    "about": "About me",
     "process": "Process",
-    "contacts": "Contact",
-    "cta": "Message me →",
+    "contacts": "Contacts",
+    "cta": "Write to me →",
     "menu": "Menu",
     "close": "Close",
     "language": "Language"
@@ -56,11 +56,13 @@
   "hero": {
     "eyebrow": "UI/UX DESIGNER / WEB DESIGNER / CREATIVE DEVELOPER",
     "wordI": "I",
-    "wordCreateBefore": "F",
-    "wordCreateAfter": "RM",
+    "wordCreateBefore": "CREATE",
+    "wordCreateAfter": "",
     "wordDesign": "DESIGN,",
     "wordThat": "THAT",
-    "wordMemorable": "STICKS",
+    "wordMemorableBefore": "PE",
+    "wordMemorableAfter": "PLE REMEMBER",
+    "wordMemorable": "PEOPLE REMEMBER",
     "cta": "VIEW PROJECTS",
     "photoAlt": "Sofia"
   },

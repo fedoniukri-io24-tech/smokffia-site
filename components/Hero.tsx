@@ -3,14 +3,29 @@ import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import WordDesign from "@/components/WordDesign";
 
 type HeroProps = {
   dict: Dictionary["hero"];
   locale: Locale;
 };
 
+function OIcon() {
+  return (
+    <Image
+      src="/images/letter-o.png"
+      alt=""
+      width={44}
+      height={51}
+      className="hero__o-icon"
+    />
+  );
+}
+
 export default function Hero({ dict, locale }: HeroProps) {
   const projectsHref = `/${locale}#projects`;
+  const memorableHasO = Boolean(dict.wordMemorableBefore);
+  const createHasO = !memorableHasO;
 
   return (
     <section className="hero">
@@ -34,24 +49,13 @@ export default function Hero({ dict, locale }: HeroProps) {
               </span>
               <span className="hero__word hero__word--create">
                 {dict.wordCreateBefore}
-                <Image
-                  src="/images/letter-o.png"
-                  alt=""
-                  width={44}
-                  height={51}
-                  className="hero__o-icon"
-                />
+                {createHasO ? <OIcon /> : null}
                 {dict.wordCreateAfter}
               </span>
             </span>
 
             <span className="hero__title-row">
-              <span className="hero__word-design">
-                <span className="hero__word-design__outline" aria-hidden="true">
-                  {dict.wordDesign}
-                </span>
-                <span className="hero__word-design__fill">{dict.wordDesign}</span>
-              </span>
+              <WordDesign className="hero__word-design">{dict.wordDesign}</WordDesign>
               <span className="hero__inline-img hero__inline-img--girl">
                 <Image
                   src="/images/hero-design.jpg"
@@ -65,9 +69,17 @@ export default function Hero({ dict, locale }: HeroProps) {
             </span>
 
             <span className="hero__title-row hero__title-row--full">
-              <span className="hero__word hero__word--full">
-                {dict.wordMemorable}
-              </span>
+              {memorableHasO ? (
+                <span className="hero__word hero__word--full hero__word--create">
+                  {dict.wordMemorableBefore}
+                  <OIcon />
+                  {dict.wordMemorableAfter}
+                </span>
+              ) : (
+                <span className="hero__word hero__word--full">
+                  {dict.wordMemorable}
+                </span>
+              )}
             </span>
           </h1>
 
@@ -101,7 +113,7 @@ export default function Hero({ dict, locale }: HeroProps) {
               src="/images/sofia-hero.jpg"
               alt={dict.photoAlt}
               fill
-              sizes="(max-width: 768px) 90vw, 420px"
+              sizes="(max-width: 767px) 440px, 420px"
               style={{ objectFit: "cover" }}
               priority
             />

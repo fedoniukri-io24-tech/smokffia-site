@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import type { Dictionary } from "@/lib/get-dictionary";
+import WordDesign from "@/components/WordDesign";
 
 type ProcessProps = {
   process: Dictionary["process"];
@@ -40,7 +41,7 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
       <div className="container process__inner">
         <h2 className="process__title">
           {process.title}{" "}
-          <span className="process__title-pink">{process.titlePink}</span>
+          <WordDesign>{process.titlePink}</WordDesign>
         </h2>
 
         <div className="process__timeline">
@@ -155,7 +156,7 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
         <div className="container">
           <h2 className="reviews__title">
             <span className="reviews__title-outline">{reviews.titleOutline}</span>{" "}
-            <span className="reviews__title-lime">{reviews.titleLime}</span>
+            <WordDesign>{reviews.titleLime}</WordDesign>
             <Image
               src="/images/reviews-hand.svg"
               alt=""
