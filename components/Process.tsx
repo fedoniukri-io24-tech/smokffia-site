@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import type { Dictionary } from "@/lib/get-dictionary";
 import WordDesign from "@/components/WordDesign";

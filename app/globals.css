@@ -1006,7 +1006,7 @@ button {
 }
 
 .about__note {
-  color: #8a8a8a;
+  color: #a3a3a3;
   font-size: 0.8125rem;
   line-height: 1.55;
   margin-bottom: 1.5rem;
@@ -1084,7 +1084,7 @@ button {
 }
 
 .about__stat-label {
-  color: #8a8a8a;
+  color: #a3a3a3;
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1254,7 +1254,7 @@ button {
 .price-card__check {
   flex-shrink: 0;
   margin-top: 1px;
-  color: #5a9e00;
+  color: #2d5200;
 }
 
 .price-card--popular .price-card__check {
@@ -1488,7 +1488,7 @@ button {
 
 .card-project__services {
   font-size: 0.6875rem;
-  color: #9a9a9a;
+  color: var(--gray-600);
   line-height: 1.4;
   margin-bottom: 1rem;
 }
@@ -2112,7 +2112,7 @@ button {
 }
 
 .contact-input::placeholder {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(0, 0, 0, 0.62);
 }
 
 .contact-input:focus {

@@ -1,8 +1,7 @@
-"use client";
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import HeroLang from "@/components/HeroLang";
 import WordDesign from "@/components/WordDesign";
 
 type HeroProps = {
@@ -31,7 +30,7 @@ export default function Hero({ dict, locale }: HeroProps) {
     <section className="hero">
       <div className="container container--wide hero__inner">
         <div className="hero__content">
-          <LanguageSwitcher locale={locale} />
+          <HeroLang locale={locale} />
 
           <p className="hero__eyebrow">{dict.eyebrow}</p>
 
@@ -44,7 +43,7 @@ export default function Hero({ dict, locale }: HeroProps) {
                   alt=""
                   width={244}
                   height={84}
-                  priority
+                  loading="lazy"
                 />
               </span>
               <span className="hero__word hero__word--create">
@@ -62,7 +61,7 @@ export default function Hero({ dict, locale }: HeroProps) {
                   alt=""
                   width={170}
                   height={83}
-                  priority
+                  loading="lazy"
                 />
               </span>
               <span className="hero__word">{dict.wordThat}</span>
@@ -90,6 +89,7 @@ export default function Hero({ dict, locale }: HeroProps) {
               width={56}
               height={58}
               className="hero__moon"
+              loading="lazy"
             />
             <div className="hero__cta-wrap">
               <a href={projectsHref} className="btn-hero">
@@ -101,6 +101,7 @@ export default function Hero({ dict, locale }: HeroProps) {
                 width={36}
                 height={62}
                 className="hero__cursor"
+                loading="lazy"
               />
             </div>
           </div>
@@ -116,6 +117,7 @@ export default function Hero({ dict, locale }: HeroProps) {
               sizes="(max-width: 767px) 440px, 420px"
               style={{ objectFit: "cover" }}
               priority
+              fetchPriority="high"
             />
           </div>
           <span className="hero__sparkle" aria-hidden>
@@ -127,6 +129,7 @@ export default function Hero({ dict, locale }: HeroProps) {
             width={72}
             height={72}
             className="hero__sun hero__sun--bl"
+            loading="lazy"
           />
           <Image
             src="/images/sun-smiley.png"
@@ -134,6 +137,7 @@ export default function Hero({ dict, locale }: HeroProps) {
             width={72}
             height={72}
             className="hero__sun hero__sun--tr"
+            loading="lazy"
           />
         </div>
 
@@ -148,6 +152,7 @@ export default function Hero({ dict, locale }: HeroProps) {
               width={36}
               height={62}
               className="hero__cursor"
+              loading="lazy"
             />
           </div>
         </div>

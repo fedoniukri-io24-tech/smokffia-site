@@ -1,13 +1,15 @@
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
 import Projects from "@/components/Projects";
-import Process from "@/components/Process";
-import Contacts from "@/components/Contacts";
 import { getDictionary } from "@/lib/get-dictionary";
 import { hasLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
+
+const Services = dynamic(() => import("@/components/Services"));
+const Process = dynamic(() => import("@/components/Process"));
+const Contacts = dynamic(() => import("@/components/Contacts"));
 
 export default async function HomePage({
   params,

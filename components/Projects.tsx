@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
@@ -14,17 +13,17 @@ const projectVisuals: Record<
   { img: string; bg: string; tilt: "left" | "center" | "right" }
 > = {
   "BUTENKO FIT": {
-    img: "/images/project-butenko.png",
+    img: "/images/project-butenko.webp",
     bg: "#E8E0F5",
     tilt: "left",
   },
   "TRADE GROUND": {
-    img: "/images/project-trade.png",
+    img: "/images/project-trade.webp",
     bg: "#C8F070",
     tilt: "center",
   },
   "NIEZNANY PIEKARZ": {
-    img: "/images/project-bakery.png",
+    img: "/images/project-bakery.webp",
     bg: "#F5D0D8",
     tilt: "right",
   },
@@ -49,7 +48,7 @@ export default function Projects({ dict }: ProjectsProps) {
         <div className="projects__grid">
           {dict.items.map((p) => {
             const visual = projectVisuals[p.title] ?? {
-              img: "/images/project-butenko.png",
+              img: "/images/project-butenko.webp",
               bg: "#E8E0F5",
               tilt: "left" as const,
             };

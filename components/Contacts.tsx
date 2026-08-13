@@ -100,8 +100,11 @@ export default function Contacts({ dict, locale }: ContactsProps) {
               ) : (
                 <form onSubmit={handleSubmit} className="contacts__form">
                   <div>
-                    <label className="contacts__label">{dict.name}</label>
+                    <label htmlFor="contact-name" className="contacts__label">
+                      {dict.name}
+                    </label>
                     <input
+                      id="contact-name"
                       type="text"
                       required
                       name="name"
@@ -115,8 +118,11 @@ export default function Contacts({ dict, locale }: ContactsProps) {
                     />
                   </div>
                   <div>
-                    <label className="contacts__label">{dict.phone}</label>
+                    <label htmlFor="contact-phone" className="contacts__label">
+                      {dict.phone}
+                    </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       required
                       name="phone"
@@ -131,8 +137,11 @@ export default function Contacts({ dict, locale }: ContactsProps) {
                     />
                   </div>
                   <div>
-                    <label className="contacts__label">{dict.message}</label>
+                    <label htmlFor="contact-message" className="contacts__label">
+                      {dict.message}
+                    </label>
                     <input
+                      id="contact-message"
                       type="text"
                       name="message"
                       value={form.message}

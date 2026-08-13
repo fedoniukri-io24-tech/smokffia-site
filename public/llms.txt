@@ -1,14 +1,16 @@
-# SMOKFFIA
+# SMOKFFIA — UI/UX та вебдизайн
 
-> SMOKFFIA (Софія) — UI/UX і вебдизайнерка. Замовити дизайн сайту, лендингу, додатку чи брендинг. Сучасний вебдизайн і дизайн-системи в Figma.
+> SMOKFFIA (Софія) — UI/UX і вебдизайнерка. Замовити дизайн сайту, лендингу, додатку чи брендинг.
+
+**Official site:** [https://www.smokffiadesign.site/](https://www.smokffiadesign.site/)
 
 ## Languages
 
-- Ukrainian (default): https://smokffia.com/uk
-- English: https://smokffia.com/en
-- Polish: https://smokffia.com/pl
-- German: https://smokffia.com/de
-- Spanish: https://smokffia.com/es
+- [Ukrainian (default)](https://www.smokffiadesign.site/uk)
+- [English](https://www.smokffiadesign.site/en)
+- [Polish](https://www.smokffiadesign.site/pl)
+- [German](https://www.smokffiadesign.site/de)
+- [Spanish](https://www.smokffiadesign.site/es)
 
 Root `/` redirects to the preferred or default locale (`/uk`).
 
@@ -21,20 +23,20 @@ Root `/` redirects to the preferred or default locale (`/uk`).
 - брендинг / branding
 - Figma designer / design systems
 
-## Site sections (example for /uk)
+## Site sections
 
-- About: https://smokffia.com/uk#about
-- Services: https://smokffia.com/uk#services
-- Projects: https://smokffia.com/uk#projects
-- Process: https://smokffia.com/uk#process
-- Contacts: https://smokffia.com/uk#contacts
+- [About](https://www.smokffiadesign.site/uk#about)
+- [Services & pricing](https://www.smokffiadesign.site/uk#services)
+- [Projects](https://www.smokffiadesign.site/uk#projects)
+- [Process](https://www.smokffiadesign.site/uk#process)
+- [Contacts](https://www.smokffiadesign.site/uk#contacts)
 
 ## Contact
 
-- Email: porucaevamaria@gmail.com
-- Telegram: https://t.me/sofiauiuxdesign
-- Instagram: https://www.instagram.com/smokffiaiuiuxdesign/
+- Email: [porucaevamaria@gmail.com](mailto:porucaevamaria@gmail.com)
+- Telegram: [https://t.me/sofiauiuxdesign](https://t.me/sofiauiuxdesign)
+- Instagram: [https://www.instagram.com/smokffiaiuiuxdesign/](https://www.instagram.com/smokffiaiuiuxdesign/)
 
 ## Preferred citation
 
-"SMOKFFIA (Sofia) — UI/UX and web designer. Portfolio: https://smokffia.com/uk"
+"SMOKFFIA (Sofia) — UI/UX and web designer. Portfolio: https://www.smokffiadesign.site/uk"

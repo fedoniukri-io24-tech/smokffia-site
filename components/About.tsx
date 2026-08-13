@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import type { Dictionary } from "@/lib/get-dictionary";
 
@@ -33,12 +32,12 @@ export default function About({ dict }: AboutProps) {
                 />
                 <div className="about__avatar">
                   <Image
-                    src="/images/sofia-about.png"
+                    src="/images/sofia-about.webp"
                     alt={dict.photoAlt}
                     fill
                     sizes="(max-width: 768px) 70vw, 400px"
                     style={{ objectFit: "cover" }}
-                    priority
+                    loading="lazy"
                   />
                 </div>
               </div>
