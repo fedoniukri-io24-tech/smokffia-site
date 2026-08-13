@@ -1,20 +1,26 @@
 import { siteConfig } from "@/lib/site";
+import type { Locale } from "@/lib/i18n";
+import { getSchemaContent } from "@/lib/schema-content";
 
-export function getPersonJsonLd() {
+const sectionIds = ["about", "services", "projects", "process", "contacts"] as const;
+
+export function getPersonJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
-    name: siteConfig.personName,
+    name: copy.personName,
     alternateName: ["SMOKFFIA", "Sofia", "Sofia UI/UX"],
-    jobTitle: ["UI/UX Designer", "Web Designer", "Вебдизайнерка"],
-    description: siteConfig.description,
+    jobTitle: ["UI/UX Designer", "Web Designer", copy.personJobTitleLocal],
+    description: copy.description,
     url: siteConfig.url,
     email: siteConfig.email,
     image: {
       "@type": "ImageObject",
       url: `${siteConfig.url}/images/sofia-hero.jpg`,
-      caption: "Софія — UI/UX і вебдизайнерка SMOKFFIA",
+      caption: copy.personCaption,
     },
     nationality: {
       "@type": "Country",
@@ -64,17 +70,19 @@ export function getPersonJsonLd() {
   };
 }
 
-export function getOrganizationJsonLd() {
+export function getOrganizationJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${siteConfig.url}/#organization`,
-    name: "SMOKFFIA",
+    name: siteConfig.name,
     alternateName: "SMOKFFIA Design",
     url: siteConfig.url,
     logo: `${siteConfig.url}/images/logo.svg`,
     image: `${siteConfig.url}/images/sofia-hero.jpg`,
-    description: siteConfig.description,
+    description: copy.description,
     email: siteConfig.email,
     founder: { "@id": `${siteConfig.url}/#person` },
     sameAs: [
@@ -88,25 +96,23 @@ export function getOrganizationJsonLd() {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: siteConfig.email,
-      url: `${siteConfig.url}/uk#contacts`,
+      url: `${siteConfig.url}/${locale}#contacts`,
       availableLanguage: ["Ukrainian", "English", "Polish", "German", "Spanish"],
     },
   };
 }
 
-export function getWebsiteJsonLd(locale = "uk") {
+export function getWebsiteJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
-    alternateName: [
-      "SMOKFFIA Design",
-      "Дизайн сайтів SMOKFFIA",
-      "Sofia UI/UX",
-    ],
+    alternateName: copy.websiteAltNames,
     url: siteConfig.url,
-    description: siteConfig.description,
+    description: copy.description,
     inLanguage: ["uk", "en", "pl", "de", "es"],
     publisher: { "@id": `${siteConfig.url}/#organization` },
     creator: { "@id": `${siteConfig.url}/#person` },
@@ -117,30 +123,32 @@ export function getWebsiteJsonLd(locale = "uk") {
       "Landing Pages",
       "Branding",
     ],
-    keywords: siteConfig.keywords.join(", "),
+    keywords: copy.keywords,
     potentialAction: [
       {
         "@type": "CommunicateAction",
-        name: "Order website design",
+        name: copy.orderAction,
         target: `${siteConfig.url}/${locale}#contacts`,
       },
       {
         "@type": "ViewAction",
-        name: "View portfolio",
+        name: copy.viewPortfolioAction,
         target: `${siteConfig.url}/${locale}#projects`,
       },
     ],
   };
 }
 
-export function getProfessionalServiceJsonLd() {
+export function getProfessionalServiceJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${siteConfig.url}/#service`,
-    name: "SMOKFFIA — дизайн сайтів і UI/UX",
-    alternateName: "Замовити дизайн сайту у SMOKFFIA",
-    description: siteConfig.description,
+    name: copy.serviceName,
+    alternateName: copy.serviceAltName,
+    description: copy.description,
     url: siteConfig.url,
     image: `${siteConfig.url}/images/sofia-hero.jpg`,
     email: siteConfig.email,
@@ -170,65 +178,27 @@ export function getProfessionalServiceJsonLd() {
       "Graphic Design",
       "Design Systems",
     ],
-    knowsAbout: siteConfig.keywords.slice(0, 20),
+    knowsAbout: copy.keywords.split(", ").slice(0, 20),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Послуги дизайну",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name: "Дизайн лендингу",
-          itemOffered: {
-            "@type": "Service",
-            name: "Landing Page Design",
-            description:
-              "Сучасний дизайн лендингу під конверсію: структура, UI, адаптив",
-          },
+      name: copy.offerCatalogName,
+      itemListElement: copy.offers.map((offer) => ({
+        "@type": "Offer",
+        name: offer.name,
+        itemOffered: {
+          "@type": "Service",
+          name: offer.serviceName,
+          description: offer.description,
         },
-        {
-          "@type": "Offer",
-          name: "Дизайн бізнес-сайту",
-          itemOffered: {
-            "@type": "Service",
-            name: "Business Website Design",
-            description:
-              "Багатосторінковий вебдизайн для компаній і сервісів",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "UI/UX дизайн додатку",
-          itemOffered: {
-            "@type": "Service",
-            name: "App Design",
-            description: "UI/UX дизайн мобільних і веб-додатків у Figma",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Брендинг",
-          itemOffered: {
-            "@type": "Service",
-            name: "Branding",
-            description: "Візуальна ідентичність, фірмовий стиль і гайдлайни",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Графічний дизайн",
-          itemOffered: {
-            "@type": "Service",
-            name: "Graphic Design",
-            description: "Графіка для цифрових продуктів і маркетингу",
-          },
-        },
-      ],
+      })),
     },
   };
 }
 
-export function getBreadcrumbJsonLd(locale = "uk") {
+export function getBreadcrumbJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
   const home = `${siteConfig.url}/${locale}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -237,28 +207,30 @@ export function getBreadcrumbJsonLd(locale = "uk") {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
+        name: copy.homeBreadcrumb,
         item: home,
       },
-      ...siteConfig.sections.map((section, index) => ({
+      ...sectionIds.map((id, index) => ({
         "@type": "ListItem",
         position: index + 2,
-        name: section.title,
-        item: `${home}${section.path.replace(/^\//, "")}`,
+        name: copy.sections[id],
+        item: `${home}#${id}`,
       })),
     ],
   };
 }
 
-export function getProfilePageJsonLd(locale = "uk") {
+export function getProfilePageJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
   const pageUrl = `${siteConfig.url}/${locale}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${pageUrl}/#profilepage`,
     url: pageUrl,
-    name: siteConfig.title,
-    description: siteConfig.description,
+    name: copy.pageTitle,
+    description: copy.description,
     inLanguage: locale,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#person` },
@@ -266,61 +238,20 @@ export function getProfilePageJsonLd(locale = "uk") {
   };
 }
 
-export function getFaqJsonLd(locale = "uk") {
-  const contactsUrl = `${siteConfig.url}/${locale}#contacts`;
+export function getFaqJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
+
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${siteConfig.url}/${locale}/#faq`,
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Скільки коштує дизайн сайту?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Вартість залежить від обсягу: лендинг, бізнес-сайт, додаток чи брендинг. Актуальні пакети й ціни — у розділі «Послуги і ціни» на сайті SMOKFFIA.",
-        },
+    mainEntity: copy.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
       },
-      {
-        "@type": "Question",
-        name: "Які послуги надає SMOKFFIA?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "UI/UX дизайн, вебдизайн, дизайн лендингів і бізнес-сайтів, app design, брендинг, графічний дизайн і дизайн-системи в Figma.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Як замовити дизайн лендингу або сайту?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Залиште заявку у формі на сайті (${contactsUrl}), напишіть у Telegram (${siteConfig.telegram}) або на email ${siteConfig.email}.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Чи працює дизайнерка з клієнтами з України та інших країн?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Так. SMOKFFIA працює віддалено з клієнтами з України та світу — українською, англійською, польською, німецькою та іспанською.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Чи доступна Софія для фриланс-проєктів?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Так, SMOKFFIA відкрита до фриланс-проєктів: лендинги, сайти, додатки, ребрендинг і UI/UX.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "В яких інструментах працює SMOKFFIA?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Основний інструмент — Figma. Також досвід з Framer, Webflow та повним циклом від дослідження до UI kit і передачі в розробку.",
-        },
-      },
-    ],
+    })),
   };
 }

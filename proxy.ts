@@ -23,6 +23,12 @@ function getPreferredLocale(request: NextRequest): string {
   return defaultLocale;
 }
 
+function withPathname(request: NextRequest, pathname: string) {
+  const response = NextResponse.next();
+  response.headers.set("x-pathname", pathname);
+  return response;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -44,7 +50,9 @@ export function proxy(request: NextRequest) {
       pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale) {
+    return withPathname(request, pathname);
+  }
 
   const locale = getPreferredLocale(request);
   const url = request.nextUrl.clone();

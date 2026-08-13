@@ -4,13 +4,14 @@ import { siteConfig } from "@/lib/site";
 import SiteJsonLd from "@/components/SiteJsonLd";
 import { getDictionary } from "@/lib/get-dictionary";
 import {
-  defaultLocale,
+  getHreflangLanguages,
   hasLocale,
   localeHtml,
   localeOg,
   locales,
   type Locale,
 } from "@/lib/i18n";
+import { fontVariables, inter } from "@/lib/fonts";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -37,10 +38,7 @@ export async function generateMetadata({
   const dict = await getDictionary(lang);
   const locale = lang as Locale;
   const url = `${siteConfig.url}/${locale}`;
-  const languages = Object.fromEntries([
-    ...locales.map((l) => [l === "uk" ? "uk-UA" : l, `${siteConfig.url}/${l}`]),
-    ["x-default", `${siteConfig.url}/${defaultLocale}`],
-  ]);
+  const languages = getHreflangLanguages(siteConfig.url);
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -118,8 +116,8 @@ export default async function LangLayout({
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={localeHtml[lang]}>
-      <body>
+    <html lang={localeHtml[lang]} className={fontVariables}>
+      <body className={inter.className}>
         <SiteJsonLd locale={lang} />
         {children}
       </body>

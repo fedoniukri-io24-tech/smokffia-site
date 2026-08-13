@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "SMOKFFIA — UI/UX і вебдизайнерка Софія";
+export const alt = "SMOKFFIA — UI/UX and web designer Sofia";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,7 +57,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            UI/UX і вебдизайн, який запам&apos;ятовується
+            UI/UX & web design people remember
           </div>
           <div
             style={{
@@ -66,7 +66,7 @@ export default function OpenGraphImage() {
               fontWeight: 700,
             }}
           >
-            Софія · портфоліо дизайнера
+            Sofia · designer portfolio
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function OpenGraphImage() {
             color: "#B0B0B0",
           }}
         >
-          <div>Сайти · Лендинги · Брендинг · App Design</div>
+          <div>Websites · Landing pages · Branding · App Design</div>
           <div
             style={{
               background: "#FF2D9B",

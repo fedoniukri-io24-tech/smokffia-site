@@ -45,3 +45,22 @@ export function getLocaleFromPathname(pathname: string): Locale | null {
   if (segment && hasLocale(segment)) return segment;
   return null;
 }
+
+/** BCP 47 tags for hreflang (matches layout metadata). */
+export const localeHreflang: Record<Locale, string> = {
+  uk: "uk-UA",
+  en: "en",
+  pl: "pl",
+  de: "de",
+  es: "es",
+};
+
+export function getHreflangLanguages(baseUrl = ""): Record<string, string> {
+  return Object.fromEntries([
+    ...locales.map((locale) => [
+      localeHreflang[locale],
+      `${baseUrl}/${locale}`,
+    ]),
+    ["x-default", `${baseUrl}/${defaultLocale}`],
+  ]);
+}

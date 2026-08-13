@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SMOKFFIA — дизайн сайтів і UI/UX",
+    name: "SMOKFFIA — UI/UX & web design",
     short_name: "SMOKFFIA",
-    description: siteConfig.description,
+    description:
+      "SMOKFFIA (Sofia) — UI/UX and web designer. Websites, landing pages, apps, branding.",
     start_url: "/",
     display: "standalone",
     background_color: "#FFFFFF",

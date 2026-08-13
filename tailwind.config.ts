@@ -18,10 +18,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        bebas: ["Bebas Neue", "cursive"],
-        archivo: ["Archivo Black", "sans-serif"],
-        unbounded: ["Unbounded", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        unbounded: ["var(--font-unbounded)", "sans-serif"],
       },
     },
   },

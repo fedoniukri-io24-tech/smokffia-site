@@ -23,10 +23,10 @@ export default function SiteJsonLd({ locale }: Props) {
       data={{
         "@context": "https://schema.org",
         "@graph": [
-          stripContext(getOrganizationJsonLd()),
-          stripContext(getPersonJsonLd()),
+          stripContext(getOrganizationJsonLd(locale)),
+          stripContext(getPersonJsonLd(locale)),
           stripContext(getWebsiteJsonLd(locale)),
-          stripContext(getProfessionalServiceJsonLd()),
+          stripContext(getProfessionalServiceJsonLd(locale)),
           stripContext(getProfilePageJsonLd(locale)),
           stripContext(getBreadcrumbJsonLd(locale)),
           stripContext(getFaqJsonLd(locale)),
