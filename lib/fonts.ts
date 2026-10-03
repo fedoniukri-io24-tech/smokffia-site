@@ -1,16 +1,6 @@
-import { Inter, Unbounded } from "next/font/google";
+/** Primary site typeface — system Helvetica Neue stack. */
+export const fontSans =
+  '"Helvetica Neue", Helvetica, Arial, sans-serif';
 
-export const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "600", "900"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-export const unbounded = Unbounded({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-unbounded",
-  display: "swap",
-});
-
-export const fontVariables = `${inter.variable} ${unbounded.variable}`;
+/** Kept for layout className compatibility (no Google font vars). */
+export const fontVariables = "";

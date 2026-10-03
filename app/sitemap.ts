@@ -16,6 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   }));
 
+  const casesHreflang = Object.fromEntries(
+    locales.map((locale) => [locale, `${siteConfig.url}/${locale}/cases`]),
+  );
+
+  const casesEntries = locales.map((locale) => ({
+    url: `${siteConfig.url}/${locale}/cases`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+    alternates: {
+      languages: {
+        ...casesHreflang,
+        "x-default": `${siteConfig.url}/uk/cases`,
+      },
+    },
+  }));
+
   const sectionIds = ["about", "services", "projects", "process", "contacts"];
 
   const sectionEntries = locales.flatMap((locale) =>
@@ -30,5 +47,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...homeEntries, ...sectionEntries];
+  return [...homeEntries, ...casesEntries, ...sectionEntries];
 }

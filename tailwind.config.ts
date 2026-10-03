@@ -18,8 +18,12 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        unbounded: ["var(--font-unbounded)", "sans-serif"],
+        sans: [
+          "Helvetica Neue",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
       },
     },
   },

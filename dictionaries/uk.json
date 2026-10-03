@@ -235,25 +235,76 @@
     "viewAll": "ПЕРЕГЛЯНУТИ ВСІ РОБОТИ",
     "items": [
       {
+        "id": "butenko-fit",
         "title": "BUTENKO FIT",
         "tags": ["UI/UX", "WEB DESIGN", "FITNESS"],
         "desc": "Онлайн-програма для жінок, що поєднує тренування, турботу про здоров'я та сучасний підхід до фізичного й ментального самопочуття.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
+        "id": "trade-ground",
         "title": "TRADE GROUND",
         "tags": ["UI/UX", "APP DESIGN", "MARKETPLACE"],
         "desc": "Повноцінний маркетплейс у Telegram: бот і міні-додаток, де можна продавати й купувати товари, не виходячи з месенджера.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
+        "id": "nieznany-piekarz",
         "title": "NIEZNANY PIEKARZ",
         "tags": ["UI/UX", "BAKERY"],
         "desc": "Платформа, де купити майстер-клас з кондитерства в Польщі можна за кілька кліків — без дзвінків і очікування.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
+      },
+      {
+        "id": "new-study-line",
+        "title": "NEW STUDY LINE",
+        "tags": ["UI/UX", "EDUCATION"],
+        "desc": "Освітня платформа для школярів і батьків: курси, розклад і зручний кабінет у сучасному інтерфейсі.",
+        "services": "ux-дослідження - ui дизайн - дизайн-система"
+      },
+      {
+        "id": "emvi-digital",
+        "title": "EMVI DIGITAL",
+        "tags": ["UI/UX", "WEB DESIGN"],
+        "desc": "Корпоративний сайт digital-агенції з акцентом на послуги, кейси та сильний візуальний характер бренду.",
+        "services": "ux-дослідження - ui дизайн - дизайн-система"
+      },
+      {
+        "id": "kavlora",
+        "title": "KAVLORA",
+        "tags": ["UI/UX", "B2B", "MANUFACTURING"],
+        "desc": "B2B-сайт виробника: переваги, каталог можливостей і чітка структура для міжнародних клієнтів.",
+        "services": "ux-дослідження - ui дизайн - дизайн-система"
+      },
+      {
+        "id": "jobhack-it",
+        "title": "JOBHACK IT",
+        "tags": ["UI/UX", "EDUCATION", "IT"],
+        "desc": "Лендинг освітнього IT-оферу: зрозуміла подача програми, переваг і швидкий шлях до заявки.",
+        "services": "ux-дослідження - ui дизайн - дизайн-система"
+      },
+      {
+        "id": "kreona",
+        "title": "KREONA",
+        "tags": ["UI/UX", "WEB DESIGN", "CORPORATE WEBSITE"],
+        "desc": "Корпоративний сайт сервісу імпорту авто: послуги, авто в наявності та зручна заявка під ключ.",
+        "services": "ux-дослідження - ui дизайн - дизайн-система"
+      },
+      {
+        "id": "13vplus",
+        "title": "13VPLUS",
+        "tags": ["UI/UX", "FASHION"],
+        "desc": "Fashion e-commerce: каталог, картка товару та естетика бренду, яка підкреслює стиль колекції.",
+        "services": "ux-дослідження - ui дизайн - дизайн-система"
       }
     ],
     "marquee": ["GRAPHIC DESIGN", "UI/IX", "WEB DESIGN", "BRANDING"]
+  },
+  "casesPage": {
+    "titleMoi": "МОЇ",
+    "titleCases": "КЕЙСИ",
+    "seoTitle": "Кейси та портфоліо | SMOKFFIA — Софія",
+    "seoDescription": "Портфоліо UI/UX і вебдизайну SMOKFFIA: лендинги, корпоративні сайти, маркетплейси та освітні продукти."
   },
   "process": {
     "title": "ПРОЦЕС",
@@ -296,12 +347,12 @@
     "titleOutline": "SOFTWARE",
     "items": [
       "FIGMA",
-      "WEBFLOW",
       "USER FLOWS",
-      "FRAMER",
+      "WEBFLOW",
+      "ILLUSTRATOR",
       "DESIGN SYSTEMS",
       "WIREFRAMING",
-      "ILLUSTRATOR"
+      "FRAMER"
     ]
   },
   "reviews": {

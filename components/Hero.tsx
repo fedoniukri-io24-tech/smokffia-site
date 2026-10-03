@@ -1,7 +1,6 @@
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
-import HeroLang from "@/components/HeroLang";
 import WordDesign from "@/components/WordDesign";
 
 type HeroProps = {
@@ -30,12 +29,10 @@ export default function Hero({ dict, locale }: HeroProps) {
     <section className="hero">
       <div className="container container--wide hero__inner">
         <div className="hero__content">
-          <HeroLang locale={locale} />
-
           <p className="hero__eyebrow">{dict.eyebrow}</p>
 
           <h1 className="hero__title">
-            <span className="hero__title-row">
+            <span className="hero__title-row hero__title-row--balance">
               <span className="hero__word">{dict.wordI}</span>
               <span className="hero__inline-img hero__inline-img--cat">
                 <Image
@@ -53,7 +50,7 @@ export default function Hero({ dict, locale }: HeroProps) {
               </span>
             </span>
 
-            <span className="hero__title-row">
+            <span className="hero__title-row hero__title-row--balance">
               <WordDesign className="hero__word-design">{dict.wordDesign}</WordDesign>
               <span className="hero__inline-img hero__inline-img--girl">
                 <Image

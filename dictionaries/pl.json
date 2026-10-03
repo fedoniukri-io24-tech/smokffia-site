@@ -235,25 +235,76 @@
     "viewAll": "ZOBACZ WSZYSTKIE PRACE",
     "items": [
       {
+        "id": "butenko-fit",
         "title": "BUTENKO FIT",
         "tags": ["UI/UX", "WEB DESIGN", "FITNESS"],
         "desc": "Program online dla kobiet łączący trening, troskę o zdrowie i nowoczesne podejście do dobrostanu fizycznego i mentalnego.",
         "services": "badania ux - ui design - design system"
       },
       {
+        "id": "trade-ground",
         "title": "TRADE GROUND",
         "tags": ["UI/UX", "APP DESIGN", "MARKETPLACE"],
         "desc": "Pełny marketplace w Telegramie: bot i mini-aplikacja, w której możesz sprzedawać i kupować bez wychodzenia z messengera.",
         "services": "badania ux - ui design - design system"
       },
       {
+        "id": "nieznany-piekarz",
         "title": "NIEZNANY PIEKARZ",
         "tags": ["UI/UX", "BAKERY"],
         "desc": "Platforma, na której warsztat cukierniczy w Polsce kupisz w kilka kliknięć — bez telefonów i czekania.",
         "services": "badania ux - ui design - design system"
+      },
+      {
+        "id": "new-study-line",
+        "title": "NEW STUDY LINE",
+        "tags": ["UI/UX", "EDUCATION"],
+        "desc": "Platforma edukacyjna dla uczniów i rodziców: kursy, harmonogram i nowoczesny panel nauki.",
+        "services": "badania ux - ui design - design system"
+      },
+      {
+        "id": "emvi-digital",
+        "title": "EMVI DIGITAL",
+        "tags": ["UI/UX", "WEB DESIGN"],
+        "desc": "Strona korporacyjna agencji digital z naciskiem na usługi, case'y i wyrazisty charakter marki.",
+        "services": "badania ux - ui design - design system"
+      },
+      {
+        "id": "kavlora",
+        "title": "KAVLORA",
+        "tags": ["UI/UX", "B2B", "MANUFACTURING"],
+        "desc": "Strona B2B producenta: kluczowe zalety, przegląd możliwości i czytelna struktura dla klientów międzynarodowych.",
+        "services": "badania ux - ui design - design system"
+      },
+      {
+        "id": "jobhack-it",
+        "title": "JOBHACK IT",
+        "tags": ["UI/UX", "EDUCATION", "IT"],
+        "desc": "Landing oferty edukacyjnej IT: jasny przekaz programu, korzyści i szybka ścieżka do zgłoszenia.",
+        "services": "badania ux - ui design - design system"
+      },
+      {
+        "id": "kreona",
+        "title": "KREONA",
+        "tags": ["UI/UX", "WEB DESIGN", "CORPORATE WEBSITE"],
+        "desc": "Strona korporacyjna serwisu importu aut: usługi, auta w ofercie i wygodny formularz zapytania.",
+        "services": "badania ux - ui design - design system"
+      },
+      {
+        "id": "13vplus",
+        "title": "13VPLUS",
+        "tags": ["UI/UX", "FASHION"],
+        "desc": "Fashion e-commerce: katalog, karta produktu i estetyka marki podkreślająca styl kolekcji.",
+        "services": "badania ux - ui design - design system"
       }
     ],
     "marquee": ["GRAPHIC DESIGN", "UI/IX", "WEB DESIGN", "BRANDING"]
+  },
+  "casesPage": {
+    "titleMoi": "MOJE",
+    "titleCases": "CASE'Y",
+    "seoTitle": "Case'y i portfolio | SMOKFFIA — Sofia",
+    "seoDescription": "Portfolio UI/UX i web designu SMOKFFIA: landingi, strony korporacyjne, marketplace'y i produkty edukacyjne."
   },
   "process": {
     "title": "PROCES",
@@ -296,12 +347,12 @@
     "titleOutline": "SOFTWARE",
     "items": [
       "FIGMA",
-      "WEBFLOW",
       "USER FLOWS",
-      "FRAMER",
+      "WEBFLOW",
+      "ILLUSTRATOR",
       "DESIGN SYSTEMS",
       "WIREFRAMING",
-      "ILLUSTRATOR"
+      "FRAMER"
     ]
   },
   "reviews": {

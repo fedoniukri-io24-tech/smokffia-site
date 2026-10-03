@@ -208,7 +208,14 @@ export default function Contacts({ dict, locale }: ContactsProps) {
                   <span className="footer-links__label">
                     {dict.footerLabels?.[l.key] ?? l.key}
                   </span>
-                  <span className="footer-links__arrow">↗</span>
+                  <Image
+                    src="/images/footer-arrow.svg"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="footer-links__arrow"
+                    aria-hidden
+                  />
                 </div>
                 <span className="footer-links__value">{l.value}</span>
               </a>

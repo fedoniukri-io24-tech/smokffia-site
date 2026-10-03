@@ -1,6 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
+import { caseVisualById, featuredCaseIds } from "@/lib/cases";
+import CaseCard from "@/components/CaseCard";
 import WordDesign from "@/components/WordDesign";
 
 type ProjectsProps = {
@@ -8,28 +11,11 @@ type ProjectsProps = {
   locale: Locale;
 };
 
-const projectVisuals: Record<
-  string,
-  { img: string; bg: string; tilt: "left" | "center" | "right" }
-> = {
-  "BUTENKO FIT": {
-    img: "/images/project-butenko.webp",
-    bg: "#E8E0F5",
-    tilt: "left",
-  },
-  "TRADE GROUND": {
-    img: "/images/project-trade.webp",
-    bg: "#C8F070",
-    tilt: "center",
-  },
-  "NIEZNANY PIEKARZ": {
-    img: "/images/project-bakery.webp",
-    bg: "#F5D0D8",
-    tilt: "right",
-  },
-};
+export default function Projects({ dict, locale }: ProjectsProps) {
+  const featured = dict.items.filter((item) =>
+    (featuredCaseIds as readonly string[]).includes(item.id),
+  );
 
-export default function Projects({ dict }: ProjectsProps) {
   return (
     <section id="projects" className="projects">
       <div className="container container--xl">
@@ -46,62 +32,26 @@ export default function Projects({ dict }: ProjectsProps) {
         </h2>
 
         <div className="projects__grid">
-          {dict.items.map((p) => {
-            const visual = projectVisuals[p.title] ?? {
-              img: "/images/project-butenko.webp",
-              bg: "#E8E0F5",
-              tilt: "left" as const,
-            };
+          {featured.map((item) => {
+            const visual = caseVisualById[item.id];
+            if (!visual) return null;
 
             return (
-              <article
-                key={p.title}
-                className={`card-project card-project--${visual.tilt}`}
-              >
-                <div
-                  className="card-project__chrome"
-                  style={{ background: visual.bg }}
-                >
-                  <div className="card-project__bar">
-                    <span className="card-project__dot" />
-                    <span className="card-project__dot" />
-                    <span className="card-project__dot" />
-                  </div>
-                  <div className="card-project__preview">
-                    <Image
-                      src={visual.img}
-                      alt={p.title}
-                      width={375}
-                      height={272}
-                      className="card-project__img"
-                    />
-                  </div>
-                </div>
-
-                <div className="card-project__body">
-                  <div className="card-project__tags">
-                    {p.tags.map((t) => (
-                      <span key={t} className="card-project__tag">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="card-project__title">{p.title}</h3>
-                  <p className="card-project__desc">{p.desc}</p>
-                  <p className="card-project__services">{p.services}</p>
-                  <a href="#" className="card-project__link">
-                    {dict.viewProject} <span aria-hidden>→</span>
-                  </a>
-                </div>
-              </article>
+              <CaseCard
+                key={item.id}
+                item={item}
+                visual={visual}
+                viewLabel={dict.viewProject}
+                variant="home"
+              />
             );
           })}
         </div>
 
         <div className="projects__all">
-          <a href="#" className="projects__all-link">
+          <Link href={`/${locale}/cases`} className="projects__all-link">
             {dict.viewAll}
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -18,10 +18,10 @@ export default function Navbar({ locale, dict }: Props) {
   const base = `/${locale}`;
 
   const links = [
-    { label: dict.works, href: `${base}#projects` },
-    { label: dict.about, href: `${base}#about` },
-    { label: dict.process, href: `${base}#process` },
-    { label: dict.contacts, href: `${base}#contacts` },
+    { label: dict.works, href: `${base}/cases` },
+    { label: dict.about, href: `${base}/#about` },
+    { label: dict.process, href: `${base}/#process` },
+    { label: dict.contacts, href: `${base}/#contacts` },
   ];
 
   useEffect(() => {
@@ -62,7 +62,10 @@ export default function Navbar({ locale, dict }: Props) {
       </ul>
 
       <div className="navbar__right">
-        <a href={`${base}#contacts`} className="navbar__cta btn-nav">
+        <div className="navbar__lang">
+          <LanguageSwitcher locale={locale} />
+        </div>
+        <a href={`${base}/#contacts`} className="navbar__cta btn-nav">
           {dict.cta}
         </a>
         <button
@@ -122,7 +125,7 @@ export default function Navbar({ locale, dict }: Props) {
           </div>
 
           <a
-            href={`${base}#contacts`}
+            href={`${base}/#contacts`}
             onClick={() => setMobileOpen(false)}
             className="btn-nav navbar__mobile-cta"
           >

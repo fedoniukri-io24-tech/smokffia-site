@@ -9,23 +9,37 @@ type ProcessProps = {
 };
 
 const stepLayout = [
+  { side: "left" as const, tilt: -2 },
+  { side: "right" as const, tilt: 2.5 },
   { side: "left" as const, tilt: -2.5 },
   { side: "right" as const, tilt: 2 },
-  { side: "left" as const, tilt: -3 },
-  { side: "right" as const, tilt: 2.5 },
-  { side: "left" as const, tilt: -2 },
+  { side: "left" as const, tilt: -1.5 },
   { side: "right" as const, tilt: 3 },
 ];
 
-const skillMeta = [
-  { tone: "lime", rotate: -3 },
-  { tone: "dark", rotate: 4 },
-  { tone: "pink", rotate: 3 },
-  { tone: "lime", rotate: 2 },
-  { tone: "dark", rotate: -2 },
-  { tone: "pink", rotate: -4 },
-  { tone: "lime", rotate: 3 },
-];
+/** Styles keyed by label so colors stay correct even if dictionary order drifts. */
+const skillMetaByLabel: Record<
+  string,
+  { tone: "lime" | "pink" | "dark"; rotate: number; slug: string }
+> = {
+  FIGMA: { tone: "lime", rotate: -3.5, slug: "figma" },
+  "USER FLOWS": { tone: "pink", rotate: 4.5, slug: "user-flows" },
+  WEBFLOW: { tone: "dark", rotate: 3, slug: "webflow" },
+  ILLUSTRATOR: { tone: "lime", rotate: -3.5, slug: "illustrator" },
+  "DESIGN SYSTEMS": { tone: "dark", rotate: 2.5, slug: "design-systems" },
+  WIREFRAMING: { tone: "pink", rotate: -5.5, slug: "wireframing" },
+  FRAMER: { tone: "lime", rotate: 5, slug: "framer" },
+};
+
+const skillOrder = [
+  "FIGMA",
+  "USER FLOWS",
+  "WEBFLOW",
+  "ILLUSTRATOR",
+  "DESIGN SYSTEMS",
+  "WIREFRAMING",
+  "FRAMER",
+] as const;
 
 const reviewMeta = [
   { tone: "white", rotate: -3 },
@@ -119,31 +133,37 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
         <div className="container">
           <h2 className="skills__title">
             <span className="skills__title-text">
-              <span className="skills__title-line">{skills.titleLine}</span>
+              <span className="skills__title-top">
+                <span className="skills__title-line">{skills.titleLine}</span>
+                <Image
+                  src="/images/skills-star.png"
+                  alt=""
+                  width={72}
+                  height={72}
+                  className="skills__star"
+                />
+              </span>
               <span className="skills__title-outline">{skills.titleOutline}</span>
             </span>
-            <Image
-              src="/images/skills-star.png"
-              alt=""
-              width={72}
-              height={72}
-              className="skills__star"
-            />
           </h2>
 
           <div className="skills__list">
-            {skills.items.map((label, i) => {
-              const meta = skillMeta[i] ?? skillMeta[0];
+            {skillOrder.map((label) => {
+              const meta = skillMetaByLabel[label];
+              const text =
+                skills.items.find(
+                  (item) => item.toUpperCase() === label
+                ) ?? label;
               return (
                 <span
                   key={label}
-                  className={`skill-badge skill-badge--${meta.tone}`}
+                  className={`skill-badge skill-badge--${meta.tone} skill-badge--${meta.slug}`}
                   style={{ transform: `rotate(${meta.rotate}deg)` }}
                 >
                   <span className="skill-badge__spark" aria-hidden>
                     ✦
                   </span>
-                  {label}
+                  {text}
                 </span>
               );
             })}

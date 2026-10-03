@@ -11,8 +11,6 @@ import {
   locales,
   type Locale,
 } from "@/lib/i18n";
-import { fontVariables, inter } from "@/lib/fonts";
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -116,8 +114,8 @@ export default async function LangLayout({
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={localeHtml[lang]} className={fontVariables}>
-      <body className={inter.className}>
+    <html lang={localeHtml[lang]}>
+      <body>
         <SiteJsonLd locale={lang} />
         {children}
       </body>
