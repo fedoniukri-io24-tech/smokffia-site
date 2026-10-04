@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "SMOKFFIA",
     description:
       "SMOKFFIA (Sofia) — UI/UX and web designer. Websites, landing pages, apps, branding.",
-    start_url: "/",
+    start_url: "/uk",
     display: "standalone",
     background_color: "#FFFFFF",
     theme_color: "#0A0A0A",

@@ -24,6 +24,7 @@ export type SchemaContent = {
     services: string;
     projects: string;
     process: string;
+    faq: string;
     contacts: string;
   };
   pageTitle: string;
@@ -34,7 +35,11 @@ export type SchemaContent = {
   serviceAltName: string;
   offerCatalogName: string;
   offers: SchemaOffer[];
+  faqHeading: string;
+  faqHeadingAccent: string;
   faq: SchemaFaqItem[];
+  casesBreadcrumb: string;
+  portfolioListName: string;
 };
 
 function faqWithLinks(locale: Locale, items: SchemaFaqItem[]): SchemaFaqItem[] {
@@ -61,6 +66,7 @@ const uk: SchemaContent = {
     services: "Послуги і ціни",
     projects: "Мої проєкти",
     process: "Процес роботи",
+    faq: "Часті питання",
     contacts: "Контакти",
   },
   pageTitle: "Дизайн сайтів, лендингів і UI/UX | SMOKFFIA — Софія",
@@ -70,6 +76,10 @@ const uk: SchemaContent = {
   serviceName: "SMOKFFIA — дизайн сайтів і UI/UX",
   serviceAltName: "Замовити дизайн сайту у SMOKFFIA",
   offerCatalogName: "Послуги дизайну",
+  faqHeading: "ЧАСТІ",
+  faqHeadingAccent: "ПИТАННЯ",
+  casesBreadcrumb: "Кейси",
+  portfolioListName: "Портфоліо проєктів SMOKFFIA",
   offers: [
     {
       name: "Дизайн лендингу",
@@ -146,6 +156,7 @@ const en: SchemaContent = {
     services: "Services & prices",
     projects: "My projects",
     process: "Work process",
+    faq: "FAQ",
     contacts: "Contact",
   },
   pageTitle: "Website, Landing Page & UI/UX Design | SMOKFFIA — Sofia",
@@ -155,6 +166,10 @@ const en: SchemaContent = {
   serviceName: "SMOKFFIA — website and UI/UX design",
   serviceAltName: "Hire SMOKFFIA for website design",
   offerCatalogName: "Design services",
+  faqHeading: "FREQUENTLY",
+  faqHeadingAccent: "ASKED",
+  casesBreadcrumb: "Cases",
+  portfolioListName: "SMOKFFIA project portfolio",
   offers: [
     {
       name: "Landing page design",
@@ -231,6 +246,7 @@ const pl: SchemaContent = {
     services: "Usługi i ceny",
     projects: "Moje projekty",
     process: "Proces pracy",
+    faq: "FAQ",
     contacts: "Kontakt",
   },
   pageTitle: "Design stron, landing page i UI/UX | SMOKFFIA — Sofia",
@@ -240,6 +256,10 @@ const pl: SchemaContent = {
   serviceName: "SMOKFFIA — design stron i UI/UX",
   serviceAltName: "Zamów design strony u SMOKFFIA",
   offerCatalogName: "Usługi designu",
+  faqHeading: "CZĘSTE",
+  faqHeadingAccent: "PYTANIA",
+  casesBreadcrumb: "Case'y",
+  portfolioListName: "Portfolio projektów SMOKFFIA",
   offers: [
     {
       name: "Design landing page",
@@ -316,6 +336,7 @@ const de: SchemaContent = {
     services: "Leistungen & Preise",
     projects: "Meine Projekte",
     process: "Arbeitsprozess",
+    faq: "FAQ",
     contacts: "Kontakt",
   },
   pageTitle: "Website-, Landingpage- & UI/UX-Design | SMOKFFIA — Sofia",
@@ -325,6 +346,10 @@ const de: SchemaContent = {
   serviceName: "SMOKFFIA — Website- und UI/UX-Design",
   serviceAltName: "Webdesign bei SMOKFFIA bestellen",
   offerCatalogName: "Design-Leistungen",
+  faqHeading: "HÄUFIGE",
+  faqHeadingAccent: "FRAGEN",
+  casesBreadcrumb: "Cases",
+  portfolioListName: "SMOKFFIA Projektportfolio",
   offers: [
     {
       name: "Landingpage-Design",
@@ -401,6 +426,7 @@ const es: SchemaContent = {
     services: "Servicios y precios",
     projects: "Mis proyectos",
     process: "Proceso de trabajo",
+    faq: "FAQ",
     contacts: "Contacto",
   },
   pageTitle: "Diseño web, landing page y UI/UX | SMOKFFIA — Sofía",
@@ -410,6 +436,10 @@ const es: SchemaContent = {
   serviceName: "SMOKFFIA — diseño web y UI/UX",
   serviceAltName: "Contratar diseño web en SMOKFFIA",
   offerCatalogName: "Servicios de diseño",
+  faqHeading: "PREGUNTAS",
+  faqHeadingAccent: "FRECUENTES",
+  casesBreadcrumb: "Cases",
+  portfolioListName: "Portfolio de proyectos SMOKFFIA",
   offers: [
     {
       name: "Diseño de landing page",

@@ -55,12 +55,20 @@ export const localeHreflang: Record<Locale, string> = {
   es: "es",
 };
 
-export function getHreflangLanguages(baseUrl = ""): Record<string, string> {
+/** Hreflang map for a locale-prefixed path (`""` = home, `"cases"` = /{locale}/cases). */
+export function getHreflangLanguages(
+  baseUrl = "",
+  pathAfterLocale = "",
+): Record<string, string> {
+  const suffix = pathAfterLocale
+    ? `/${pathAfterLocale.replace(/^\/+/, "")}`
+    : "";
+
   return Object.fromEntries([
     ...locales.map((locale) => [
       localeHreflang[locale],
-      `${baseUrl}/${locale}`,
+      `${baseUrl}/${locale}${suffix}`,
     ]),
-    ["x-default", `${baseUrl}/${defaultLocale}`],
+    ["x-default", `${baseUrl}/${defaultLocale}${suffix}`],
   ]);
 }

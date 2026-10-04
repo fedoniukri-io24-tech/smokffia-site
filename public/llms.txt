@@ -29,6 +29,8 @@ Root `/` redirects to the preferred or default locale (`/uk`).
 - [Services & pricing](https://www.smokffiadesign.site/uk#services)
 - [Projects](https://www.smokffiadesign.site/uk#projects)
 - [Process](https://www.smokffiadesign.site/uk#process)
+- [FAQ](https://www.smokffiadesign.site/uk#faq)
+- [Cases / portfolio](https://www.smokffiadesign.site/uk/cases)
 - [Contacts](https://www.smokffiadesign.site/uk#contacts)
 
 ## Contact

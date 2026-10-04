@@ -4,7 +4,8 @@ import { getHreflangLanguages, locales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const hreflang = getHreflangLanguages(siteConfig.url);
+  const homeHreflang = getHreflangLanguages(siteConfig.url);
+  const casesHreflang = getHreflangLanguages(siteConfig.url, "cases");
 
   const homeEntries = locales.map((locale) => ({
     url: `${siteConfig.url}/${locale}`,
@@ -12,13 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: locale === "uk" ? 1 : 0.9,
     alternates: {
-      languages: hreflang,
+      languages: homeHreflang,
     },
   }));
-
-  const casesHreflang = Object.fromEntries(
-    locales.map((locale) => [locale, `${siteConfig.url}/${locale}/cases`]),
-  );
 
   const casesEntries = locales.map((locale) => ({
     url: `${siteConfig.url}/${locale}/cases`,
@@ -26,26 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: 0.85,
     alternates: {
-      languages: {
-        ...casesHreflang,
-        "x-default": `${siteConfig.url}/uk/cases`,
-      },
+      languages: casesHreflang,
     },
   }));
 
-  const sectionIds = ["about", "services", "projects", "process", "contacts"];
-
-  const sectionEntries = locales.flatMap((locale) =>
-    sectionIds.map((id, index) => ({
-      url: `${siteConfig.url}/${locale}#${id}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: Math.max(0.5, 0.8 - index * 0.05),
-      alternates: {
-        languages: hreflang,
-      },
-    })),
-  );
-
-  return [...homeEntries, ...casesEntries, ...sectionEntries];
+  return [...homeEntries, ...casesEntries];
 }

@@ -95,11 +95,19 @@ export async function generateMetadata({
         "max-video-preview": -1,
       },
     },
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : undefined,
     icons: {
       icon: [{ url: "/images/logo.svg", type: "image/svg+xml" }],
       apple: [{ url: "/images/logo.svg" }],
     },
     manifest: "/manifest.webmanifest",
+    formatDetection: {
+      telephone: false,
+      email: false,
+      address: false,
+    },
   };
 }
 
@@ -113,9 +121,20 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
+  const skipLabel: Record<Locale, string> = {
+    uk: "До змісту",
+    en: "Skip to content",
+    pl: "Przejdź do treści",
+    de: "Zum Inhalt",
+    es: "Saltar al contenido",
+  };
+
   return (
     <html lang={localeHtml[lang]}>
       <body>
+        <a href="#main" className="skip-link">
+          {skipLabel[lang]}
+        </a>
         <SiteJsonLd locale={lang} />
         {children}
       </body>

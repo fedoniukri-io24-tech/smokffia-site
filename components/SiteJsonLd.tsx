@@ -1,17 +1,15 @@
 import JsonLd from "@/components/JsonLd";
 import {
-  getBreadcrumbJsonLd,
-  getFaqJsonLd,
   getOrganizationJsonLd,
   getPersonJsonLd,
   getProfessionalServiceJsonLd,
-  getProfilePageJsonLd,
   getWebsiteJsonLd,
 } from "@/lib/schema";
 import type { Locale } from "@/lib/i18n";
 
 type Props = { locale: Locale };
 
+/** Global schema shared across all locale pages. */
 export default function SiteJsonLd({ locale }: Props) {
   const stripContext = (item: Record<string, unknown>) => {
     const { ["@context"]: _ctx, ...rest } = item;
@@ -27,9 +25,6 @@ export default function SiteJsonLd({ locale }: Props) {
           stripContext(getPersonJsonLd(locale)),
           stripContext(getWebsiteJsonLd(locale)),
           stripContext(getProfessionalServiceJsonLd(locale)),
-          stripContext(getProfilePageJsonLd(locale)),
-          stripContext(getBreadcrumbJsonLd(locale)),
-          stripContext(getFaqJsonLd(locale)),
         ],
       }}
     />

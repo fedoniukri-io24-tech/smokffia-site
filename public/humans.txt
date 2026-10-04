@@ -10,8 +10,9 @@ Languages: Ukrainian, English
 /* SITE */
 Title: Дизайн сайтів, лендингів і UI/UX | SMOKFFIA
 Purpose: Portfolio and design services — websites, landing pages, apps, branding
-Last update: 2026-08-11
-Language: uk
+Site: https://www.smokffiadesign.site/
+Last update: 2026-10-04
+Language: uk, en, pl, de, es
 Standards: HTML5, CSS3, Next.js, Schema.org
 Doctype: HTML5
 IDE: Cursor

@@ -89,7 +89,7 @@ export default function OpenGraphImage() {
               fontSize: 20,
             }}
           >
-            smokffia.com
+            smokffiadesign.site
           </div>
         </div>
       </div>

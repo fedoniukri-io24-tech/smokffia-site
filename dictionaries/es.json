@@ -64,7 +64,7 @@
     "wordMemorableAfter": "",
     "wordMemorable": "SE RECUERDA",
     "cta": "VER PROYECTOS",
-    "photoAlt": "Sofía"
+    "photoAlt": "Sofía — diseñadora UI/UX y web en SMOKFFIA"
   },
   "about": {
     "hello": "¡Hola!",
@@ -72,19 +72,46 @@
     "nameMobile": "¡Hola! Soy Sofía — diseñadora UI/UX y web.",
     "text": "Ayudo a marcas, empresas y startups a crear productos digitales que unen estilo, funcionalidad y una experiencia de usuario clara. Para mí, el diseño no es solo una imagen bonita. Es una herramienta que ayuda al negocio a alcanzar sus objetivos — y a las personas a interactuar con el producto con facilidad.",
     "note": "Cada proyecto empieza con investigación, decisiones pensadas y atención al detalle.",
-    "tagsDesktop": ["WEB DESIGN", "BRANDING", "GRAPHIC DESIGN"],
-    "tagsMobile": ["WEB DESIGN", "UI/UX", "BRANDING", "GRAPHIC DESIGN"],
+    "tagsDesktop": [
+      "WEB DESIGN",
+      "BRANDING",
+      "GRAPHIC DESIGN"
+    ],
+    "tagsMobile": [
+      "WEB DESIGN",
+      "UI/UX",
+      "BRANDING",
+      "GRAPHIC DESIGN"
+    ],
     "stats": [
-      { "value": "2+", "label": "AÑOS DE EXPERIENCIA COMERCIAL" },
-      { "value": "10+", "label": "PROYECTOS" },
-      { "value": "3", "label": "PAÍSES" }
+      {
+        "value": "2+",
+        "label": "AÑOS DE EXPERIENCIA COMERCIAL"
+      },
+      {
+        "value": "10+",
+        "label": "PROYECTOS"
+      },
+      {
+        "value": "3",
+        "label": "PAÍSES"
+      }
     ],
     "statsMobile": [
-      { "value": "10+", "label": "PROYECTOS" },
-      { "value": "2+", "label": "AÑOS DE EXPERIENCIA COMERCIAL" },
-      { "value": "3", "label": "PAÍSES" }
+      {
+        "value": "10+",
+        "label": "PROYECTOS"
+      },
+      {
+        "value": "2+",
+        "label": "AÑOS DE EXPERIENCIA COMERCIAL"
+      },
+      {
+        "value": "3",
+        "label": "PAÍSES"
+      }
     ],
-    "photoAlt": "Sofía"
+    "photoAlt": "Sofía — diseñadora UI/UX y web en SMOKFFIA"
   },
   "services": {
     "title": "SERVICIOS",
@@ -96,7 +123,12 @@
     "bannerText": "El precio individual depende del alcance del proyecto.",
     "bannerText2": "Escríbeme — y prepararé una propuesta a medida de tu brief",
     "quote": "OBTENER PRESUPUESTO",
-    "categories": ["WEB DESIGN", "APP DESIGN", "BRANDING", "GRAPHIC DESIGN"],
+    "categories": [
+      "WEB DESIGN",
+      "APP DESIGN",
+      "BRANDING",
+      "GRAPHIC DESIGN"
+    ],
     "plans": {
       "WEB DESIGN": [
         {
@@ -237,74 +269,111 @@
       {
         "id": "butenko-fit",
         "title": "BUTENKO FIT",
-        "tags": ["UI/UX", "WEB DESIGN", "FITNESS"],
+        "tags": [
+          "UI/UX",
+          "WEB DESIGN",
+          "FITNESS"
+        ],
         "desc": "Un programa online para mujeres que combina entrenamiento, cuidado de la salud y un enfoque moderno del bienestar físico y mental.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "trade-ground",
         "title": "TRADE GROUND",
-        "tags": ["UI/UX", "APP DESIGN", "MARKETPLACE"],
+        "tags": [
+          "UI/UX",
+          "APP DESIGN",
+          "MARKETPLACE"
+        ],
         "desc": "Un marketplace completo en Telegram: bot y mini-app donde puedes comprar y vender sin salir del mensajero.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "nieznany-piekarz",
         "title": "NIEZNANY PIEKARZ",
-        "tags": ["UI/UX", "BAKERY"],
+        "tags": [
+          "UI/UX",
+          "BAKERY"
+        ],
         "desc": "Una plataforma donde reservar un taller de pastelería en Polonia toma solo unos clics — sin llamadas ni esperas.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "new-study-line",
         "title": "NEW STUDY LINE",
-        "tags": ["UI/UX", "EDUCATION"],
+        "tags": [
+          "UI/UX",
+          "EDUCATION"
+        ],
         "desc": "Plataforma educativa para alumnos y padres: cursos, horarios y un panel de aprendizaje moderno y claro.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "emvi-digital",
         "title": "EMVI DIGITAL",
-        "tags": ["UI/UX", "WEB DESIGN"],
+        "tags": [
+          "UI/UX",
+          "WEB DESIGN"
+        ],
         "desc": "Sitio corporativo de una agencia digital con foco en servicios, casos y un carácter de marca potente.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "kavlora",
         "title": "KAVLORA",
-        "tags": ["UI/UX", "B2B", "MANUFACTURING"],
+        "tags": [
+          "UI/UX",
+          "B2B",
+          "MANUFACTURING"
+        ],
         "desc": "Sitio B2B de fabricante: ventajas clave, visión de capacidades y estructura clara para clientes internacionales.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "jobhack-it",
         "title": "JOBHACK IT",
-        "tags": ["UI/UX", "EDUCATION", "IT"],
+        "tags": [
+          "UI/UX",
+          "EDUCATION",
+          "IT"
+        ],
         "desc": "Landing de una oferta educativa IT: mensaje claro del programa, beneficios y camino rápido a la solicitud.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "kreona",
         "title": "KREONA",
-        "tags": ["UI/UX", "WEB DESIGN", "CORPORATE WEBSITE"],
+        "tags": [
+          "UI/UX",
+          "WEB DESIGN",
+          "CORPORATE WEBSITE"
+        ],
         "desc": "Sitio corporativo de un servicio de importación de autos: servicios, stock y un flujo de solicitud sencillo.",
         "services": "investigación ux - ui design - design system"
       },
       {
         "id": "13vplus",
         "title": "13VPLUS",
-        "tags": ["UI/UX", "FASHION"],
+        "tags": [
+          "UI/UX",
+          "FASHION"
+        ],
         "desc": "E-commerce de moda: catálogo, ficha de producto y estética de marca que destaca el estilo de la colección.",
         "services": "investigación ux - ui design - design system"
       }
     ],
-    "marquee": ["GRAPHIC DESIGN", "UI/IX", "WEB DESIGN", "BRANDING"]
+    "marquee": [
+      "GRAPHIC DESIGN",
+      "UI/IX",
+      "WEB DESIGN",
+      "BRANDING"
+    ]
   },
   "casesPage": {
     "titleMoi": "MIS",
     "titleCases": "CASES",
-    "seoTitle": "Cases y portfolio | SMOKFFIA — Sofia",
-    "seoDescription": "Portfolio de UI/UX y web design de SMOKFFIA: landings, sitios corporativos, marketplaces y productos educativos."
+    "seoTitle": "Cases y portfolio de diseño web | SMOKFFIA — Sofía",
+    "seoDescription": "Portfolio de UI/UX y diseño web de SMOKFFIA: landings, sitios corporativos, marketplaces y productos educativos y de moda. Mira los cases de Sofía."
   },
   "process": {
     "title": "PROCESO",

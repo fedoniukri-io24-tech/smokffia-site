@@ -64,7 +64,7 @@
     "wordMemorableAfter": "",
     "wordMemorable": "ЗАПАМ'ЯТОВУЄТЬСЯ",
     "cta": "ПЕРЕГЛЯНУТИ ПРОЄКТИ",
-    "photoAlt": "Софія"
+    "photoAlt": "Софія — UI/UX та вебдизайнерка SMOKFFIA"
   },
   "about": {
     "hello": "Привіт!",
@@ -72,19 +72,46 @@
     "nameMobile": "Привіт! Я Софія — UI/UX та вебдизайнерка.",
     "text": "Я допомагаю брендам, компаніям і стартапам створювати цифрові продукти, які поєднують стиль, функціональність та зрозумілий користувацький досвід. Для мене дизайн — це не лише гарна картинка. Це інструмент, який допомагає бізнесу досягати своїх цілей, а людям — легко взаємодіяти з продуктом.",
     "note": "Кожен проєкт починається з дослідження, продуманих рішень і уваги до деталей.",
-    "tagsDesktop": ["WEB DESIGN", "BRANDING", "GRAPHIC DESIGN"],
-    "tagsMobile": ["WEB DESIGN", "UI/UX", "BRANDING", "GRAPHIC DESIGN"],
+    "tagsDesktop": [
+      "WEB DESIGN",
+      "BRANDING",
+      "GRAPHIC DESIGN"
+    ],
+    "tagsMobile": [
+      "WEB DESIGN",
+      "UI/UX",
+      "BRANDING",
+      "GRAPHIC DESIGN"
+    ],
     "stats": [
-      { "value": "2+", "label": "КОМЕРЦІЙНОГО ДОСВІДУ" },
-      { "value": "10+", "label": "ПРОЄКТІВ" },
-      { "value": "3", "label": "КРАЇНИ" }
+      {
+        "value": "2+",
+        "label": "КОМЕРЦІЙНОГО ДОСВІДУ"
+      },
+      {
+        "value": "10+",
+        "label": "ПРОЄКТІВ"
+      },
+      {
+        "value": "3",
+        "label": "КРАЇНИ"
+      }
     ],
     "statsMobile": [
-      { "value": "10+", "label": "ПРОЄКТІВ" },
-      { "value": "2+", "label": "КОМЕРЦІЙНОГО ДОСВІДУ" },
-      { "value": "3", "label": "КРАЇНИ" }
+      {
+        "value": "10+",
+        "label": "ПРОЄКТІВ"
+      },
+      {
+        "value": "2+",
+        "label": "КОМЕРЦІЙНОГО ДОСВІДУ"
+      },
+      {
+        "value": "3",
+        "label": "КРАЇНИ"
+      }
     ],
-    "photoAlt": "Софія"
+    "photoAlt": "Софія — UI/UX та вебдизайнерка SMOKFFIA"
   },
   "services": {
     "title": "ПОСЛУГИ",
@@ -96,7 +123,12 @@
     "bannerText": "Індивідуальна вартість залежить від обсягу проєкту.",
     "bannerText2": "Напишіть мені — і я підготую пропозицію під ваш запит",
     "quote": "ОТРИМАТИ ВАРТІСТЬ",
-    "categories": ["WEB DESIGN", "APP DESIGN", "BRANDING", "GRAPHIC DESIGN"],
+    "categories": [
+      "WEB DESIGN",
+      "APP DESIGN",
+      "BRANDING",
+      "GRAPHIC DESIGN"
+    ],
     "plans": {
       "WEB DESIGN": [
         {
@@ -237,74 +269,111 @@
       {
         "id": "butenko-fit",
         "title": "BUTENKO FIT",
-        "tags": ["UI/UX", "WEB DESIGN", "FITNESS"],
+        "tags": [
+          "UI/UX",
+          "WEB DESIGN",
+          "FITNESS"
+        ],
         "desc": "Онлайн-програма для жінок, що поєднує тренування, турботу про здоров'я та сучасний підхід до фізичного й ментального самопочуття.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "trade-ground",
         "title": "TRADE GROUND",
-        "tags": ["UI/UX", "APP DESIGN", "MARKETPLACE"],
+        "tags": [
+          "UI/UX",
+          "APP DESIGN",
+          "MARKETPLACE"
+        ],
         "desc": "Повноцінний маркетплейс у Telegram: бот і міні-додаток, де можна продавати й купувати товари, не виходячи з месенджера.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "nieznany-piekarz",
         "title": "NIEZNANY PIEKARZ",
-        "tags": ["UI/UX", "BAKERY"],
+        "tags": [
+          "UI/UX",
+          "BAKERY"
+        ],
         "desc": "Платформа, де купити майстер-клас з кондитерства в Польщі можна за кілька кліків — без дзвінків і очікування.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "new-study-line",
         "title": "NEW STUDY LINE",
-        "tags": ["UI/UX", "EDUCATION"],
+        "tags": [
+          "UI/UX",
+          "EDUCATION"
+        ],
         "desc": "Освітня платформа для школярів і батьків: курси, розклад і зручний кабінет у сучасному інтерфейсі.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "emvi-digital",
         "title": "EMVI DIGITAL",
-        "tags": ["UI/UX", "WEB DESIGN"],
+        "tags": [
+          "UI/UX",
+          "WEB DESIGN"
+        ],
         "desc": "Корпоративний сайт digital-агенції з акцентом на послуги, кейси та сильний візуальний характер бренду.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "kavlora",
         "title": "KAVLORA",
-        "tags": ["UI/UX", "B2B", "MANUFACTURING"],
+        "tags": [
+          "UI/UX",
+          "B2B",
+          "MANUFACTURING"
+        ],
         "desc": "B2B-сайт виробника: переваги, каталог можливостей і чітка структура для міжнародних клієнтів.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "jobhack-it",
         "title": "JOBHACK IT",
-        "tags": ["UI/UX", "EDUCATION", "IT"],
+        "tags": [
+          "UI/UX",
+          "EDUCATION",
+          "IT"
+        ],
         "desc": "Лендинг освітнього IT-оферу: зрозуміла подача програми, переваг і швидкий шлях до заявки.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "kreona",
         "title": "KREONA",
-        "tags": ["UI/UX", "WEB DESIGN", "CORPORATE WEBSITE"],
+        "tags": [
+          "UI/UX",
+          "WEB DESIGN",
+          "CORPORATE WEBSITE"
+        ],
         "desc": "Корпоративний сайт сервісу імпорту авто: послуги, авто в наявності та зручна заявка під ключ.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       },
       {
         "id": "13vplus",
         "title": "13VPLUS",
-        "tags": ["UI/UX", "FASHION"],
+        "tags": [
+          "UI/UX",
+          "FASHION"
+        ],
         "desc": "Fashion e-commerce: каталог, картка товару та естетика бренду, яка підкреслює стиль колекції.",
         "services": "ux-дослідження - ui дизайн - дизайн-система"
       }
     ],
-    "marquee": ["GRAPHIC DESIGN", "UI/IX", "WEB DESIGN", "BRANDING"]
+    "marquee": [
+      "GRAPHIC DESIGN",
+      "UI/IX",
+      "WEB DESIGN",
+      "BRANDING"
+    ]
   },
   "casesPage": {
     "titleMoi": "МОЇ",
     "titleCases": "КЕЙСИ",
-    "seoTitle": "Кейси та портфоліо | SMOKFFIA — Софія",
-    "seoDescription": "Портфоліо UI/UX і вебдизайну SMOKFFIA: лендинги, корпоративні сайти, маркетплейси та освітні продукти."
+    "seoTitle": "Кейси та портфоліо вебдизайну | SMOKFFIA — Софія",
+    "seoDescription": "Портфоліо UI/UX і вебдизайну SMOKFFIA: лендинги, корпоративні сайти, маркетплейси, освітні та fashion-продукти. Перегляньте кейси Софії."
   },
   "process": {
     "title": "ПРОЦЕС",

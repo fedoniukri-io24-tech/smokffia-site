@@ -14,7 +14,9 @@ Next.js 14 + TypeScript + Tailwind CSS portfolio site for Sofia (SMOKFFIA), UI/U
 Set your production domain in `.env` (see `.env.example`):
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://smokffia.com
+NEXT_PUBLIC_SITE_URL=https://www.smokffiadesign.site
+# optional:
+# NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-token
 ```
 
 Generated / static SEO endpoints:
@@ -22,14 +24,14 @@ Generated / static SEO endpoints:
 | Path | Purpose |
 |------|---------|
 | `/robots.txt` | Crawler rules |
-| `/sitemap.xml` | Sitemap |
+| `/sitemap.xml` | Sitemap (locale homes + cases) |
 | `/manifest.webmanifest` | PWA manifest |
 | `/llms.txt` | AI / LLM site summary |
 | `/humans.txt` | Humans.txt credits |
 | `/opengraph-image` | Open Graph image |
 | `/twitter-image` | Twitter card image |
 
-Schema.org JSON-LD is injected in the root layout (`Person`, `WebSite`, `ProfessionalService`, `FAQPage`).
+Schema.org JSON-LD: global (`Organization`, `Person`, `WebSite`, `ProfessionalService`) plus home (`ProfilePage`, `FAQPage`, breadcrumbs) and cases (`CollectionPage`, `ItemList`).
 
 ## Getting Started
 

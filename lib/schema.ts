@@ -2,7 +2,14 @@ import { siteConfig } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
 import { getSchemaContent } from "@/lib/schema-content";
 
-const sectionIds = ["about", "services", "projects", "process", "contacts"] as const;
+const sectionIds = [
+  "about",
+  "services",
+  "projects",
+  "process",
+  "faq",
+  "contacts",
+] as const;
 
 export function getPersonJsonLd(locale: Locale) {
   const copy = getSchemaContent(locale);
@@ -244,7 +251,7 @@ export function getFaqJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${siteConfig.url}/${locale}/#faq`,
+    "@id": `${siteConfig.url}/${locale}/#faqpage`,
     mainEntity: copy.faq.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -253,5 +260,70 @@ export function getFaqJsonLd(locale: Locale) {
         text: item.answer,
       },
     })),
+  };
+}
+
+export type PortfolioListItem = {
+  id: string;
+  title: string;
+  desc: string;
+};
+
+export function getCasesPageJsonLd(
+  locale: Locale,
+  items: PortfolioListItem[],
+) {
+  const copy = getSchemaContent(locale);
+  const pageUrl = `${siteConfig.url}/${locale}/cases`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}/#collection`,
+    url: pageUrl,
+    name: copy.casesBreadcrumb,
+    description: copy.description,
+    inLanguage: locale,
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    about: { "@id": `${siteConfig.url}/#person` },
+    mainEntity: {
+      "@type": "ItemList",
+      "@id": `${pageUrl}/#itemlist`,
+      name: copy.portfolioListName,
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        description: item.desc,
+        url: `${pageUrl}#${item.id}`,
+      })),
+    },
+  };
+}
+
+export function getCasesBreadcrumbJsonLd(locale: Locale) {
+  const copy = getSchemaContent(locale);
+  const home = `${siteConfig.url}/${locale}`;
+  const cases = `${home}/cases`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${cases}/#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: copy.homeBreadcrumb,
+        item: home,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: copy.casesBreadcrumb,
+        item: cases,
+      },
+    ],
   };
 }

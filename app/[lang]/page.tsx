@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Faq from "@/components/Faq";
+import HomeJsonLd from "@/components/HomeJsonLd";
 import { getDictionary } from "@/lib/get-dictionary";
 import { hasLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -24,6 +26,7 @@ export default async function HomePage({
 
   return (
     <main id="main" className="page">
+      <HomeJsonLd locale={locale} />
       <Navbar locale={locale} dict={dict.nav} />
       <Hero locale={locale} dict={dict.hero} />
       <About dict={dict.about} />
@@ -34,6 +37,7 @@ export default async function HomePage({
         skills={dict.skills}
         reviews={dict.reviews}
       />
+      <Faq locale={locale} />
       <Contacts locale={locale} dict={dict.contacts} />
     </main>
   );

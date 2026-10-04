@@ -11,7 +11,7 @@ export const siteConfig = {
   language: "uk",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://smokffia.com",
+    "https://www.smokffiadesign.site",
   creator: "Софія · SMOKFFIA",
   email: "porucaevamaria@gmail.com",
   telegram: "https://t.me/sofiauiuxdesign",
@@ -91,6 +91,12 @@ export const siteConfig = {
       path: "/#process",
       title: "Процес роботи",
       description: "Як проходить дизайн-проєкт від брифу до запуску",
+    },
+    {
+      id: "faq",
+      path: "/#faq",
+      title: "Часті питання",
+      description: "Вартість, послуги та як замовити дизайн",
     },
     {
       id: "contacts",
