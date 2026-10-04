@@ -56,19 +56,13 @@ export default function Projects({ dict, locale }: ProjectsProps) {
       </div>
 
       <div className="projects-marquee" aria-hidden>
-        <div className="projects-marquee__edge projects-marquee__edge--top">
-          <svg
-            className="projects-marquee__edge-svg"
-            viewBox="0 0 1440 56"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="currentColor"
-              d="M0 28C110 8 210 46 340 30C470 14 560 4 700 26C840 48 940 52 1080 28C1220 4 1320 14 1440 24V56H0V28Z"
-            />
-          </svg>
-        </div>
+        <Image
+          src="/images/projects-marquee-bg.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="projects-marquee__bg"
+        />
         <div className="projects-marquee__inner">
           <div className="projects-marquee__track">
             {Array.from({ length: 4 }).map((_, i) => (
@@ -82,19 +76,6 @@ export default function Projects({ dict, locale }: ProjectsProps) {
               </span>
             ))}
           </div>
-        </div>
-        <div className="projects-marquee__edge projects-marquee__edge--lime">
-          <svg
-            className="projects-marquee__edge-svg"
-            viewBox="0 0 1440 40"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="currentColor"
-              d="M0 0H1440V12C1320 28 1220 36 1080 18C940 -2 840 4 700 22C560 40 470 34 340 16C210 -2 110 20 0 14V0Z"
-            />
-          </svg>
         </div>
       </div>
     </section>

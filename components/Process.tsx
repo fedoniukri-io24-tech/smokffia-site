@@ -20,15 +20,15 @@ const stepLayout = [
 /** Styles keyed by label so colors stay correct even if dictionary order drifts. */
 const skillMetaByLabel: Record<
   string,
-  { tone: "lime" | "pink" | "dark"; rotate: number; slug: string }
+  { tone: "lime" | "pink" | "dark"; slug: string }
 > = {
-  FIGMA: { tone: "lime", rotate: -3.5, slug: "figma" },
-  "USER FLOWS": { tone: "pink", rotate: 4.5, slug: "user-flows" },
-  WEBFLOW: { tone: "dark", rotate: 3, slug: "webflow" },
-  ILLUSTRATOR: { tone: "lime", rotate: -3.5, slug: "illustrator" },
-  "DESIGN SYSTEMS": { tone: "dark", rotate: 2.5, slug: "design-systems" },
-  WIREFRAMING: { tone: "pink", rotate: -5.5, slug: "wireframing" },
-  FRAMER: { tone: "lime", rotate: 5, slug: "framer" },
+  FIGMA: { tone: "lime", slug: "figma" },
+  "USER FLOWS": { tone: "pink", slug: "user-flows" },
+  WEBFLOW: { tone: "dark", slug: "webflow" },
+  ILLUSTRATOR: { tone: "lime", slug: "illustrator" },
+  "DESIGN SYSTEMS": { tone: "dark", slug: "design-systems" },
+  WIREFRAMING: { tone: "pink", slug: "wireframing" },
+  FRAMER: { tone: "lime", slug: "framer" },
 };
 
 const skillOrder = [
@@ -158,7 +158,6 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
                 <span
                   key={label}
                   className={`skill-badge skill-badge--${meta.tone} skill-badge--${meta.slug}`}
-                  style={{ transform: `rotate(${meta.rotate}deg)` }}
                 >
                   <span className="skill-badge__spark" aria-hidden>
                     ✦

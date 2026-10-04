@@ -1896,37 +1896,38 @@ button {
 
 .projects-marquee {
   position: relative;
-  margin-top: 1rem;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1444 / 213;
+  background: transparent;
+  margin-top: 1.25rem;
 }
 
-.projects-marquee__edge {
-  line-height: 0;
+.projects-marquee__bg {
+  object-fit: fill;
+  object-position: center;
+  z-index: 0;
   pointer-events: none;
 }
 
-.projects-marquee__edge-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.projects-marquee__edge--top {
-  height: 28px;
-  color: var(--black);
-  margin-bottom: -1px;
-}
-
 .projects-marquee__inner {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
-  background: var(--black);
-  padding-block: 1.15rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
 }
 
 .projects-marquee__track {
   animation: marquee 22s linear infinite;
   white-space: nowrap;
   display: flex;
+  align-items: center;
   width: max-content;
+  will-change: transform;
 }
 
 .projects-marquee__item {
@@ -1949,12 +1950,6 @@ button {
 .projects-marquee__star {
   color: var(--pink);
   font-size: 0.9rem;
-}
-
-.projects-marquee__edge--lime {
-  height: 18px;
-  color: var(--lime);
-  margin-top: -1px;
 }
 
 /* ——— Process ——— */
@@ -2099,6 +2094,8 @@ button {
   letter-spacing: 0.01em;
   color: var(--black);
   line-height: 1.2;
+  -webkit-text-stroke: 0.035em var(--black);
+  paint-order: stroke fill;
 }
 
 .timeline-card__num {
@@ -2229,20 +2226,21 @@ button {
   }
 
   .timeline-card__title {
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     flex: 1;
     min-width: 0;
+    line-height: 1.08;
   }
 
   .timeline-card__num {
-    font-size: 1.85rem;
+    font-size: 2.25rem;
     -webkit-text-stroke-width: 1.5px;
   }
 
   .timeline-card__desc {
-    font-size: 0.78rem;
+    font-size: 0.95rem;
     color: #666;
-    line-height: 1.5;
+    line-height: 1.4;
   }
 }
 
@@ -2339,24 +2337,28 @@ button {
   grid-area: figma;
   justify-self: start;
   margin-top: 0.15rem;
+  transform: rotate(-3.5deg);
 }
 
 .skill-badge--user-flows {
   grid-area: flows;
   justify-self: end;
   margin-top: -0.55rem;
+  transform: rotate(4.5deg);
 }
 
 .skill-badge--webflow {
   grid-area: webflow;
   justify-self: start;
   margin-top: 0.2rem;
+  transform: rotate(-3deg);
 }
 
 .skill-badge--illustrator {
   grid-area: illustrator;
   justify-self: end;
   margin-top: 0.05rem;
+  transform: rotate(-3.5deg);
 }
 
 .skill-badge--design-systems {
@@ -2365,18 +2367,21 @@ button {
   margin-top: 0.35rem;
   margin-left: 1.75rem;
   padding-inline: 1.35rem;
+  transform: rotate(-2.5deg);
 }
 
 .skill-badge--wireframing {
   grid-area: wire;
   justify-self: start;
   margin-top: 0.2rem;
+  transform: rotate(-5.5deg);
 }
 
 .skill-badge--framer {
   grid-area: framer;
   justify-self: end;
   margin-top: -0.2rem;
+  transform: rotate(5deg);
 }
 
 .skill-badge__spark {
@@ -2927,10 +2932,10 @@ button {
   .hero__inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 520px);
-    align-items: start;
+    align-items: center;
     gap: 1.75rem clamp(1.25rem, 2.5vw, 2.25rem);
-    padding-top: 2rem;
-    padding-bottom: 3.75rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     min-height: calc(100vh - var(--nav-h));
   }
 
@@ -3015,7 +3020,7 @@ button {
     margin-inline: clamp(0.35rem, 1.2vw, 1rem) clamp(0.15rem, 0.8vw, 0.65rem);
     margin-left: auto;
     margin-top: 0;
-    align-self: start;
+    align-self: center;
     justify-self: end;
   }
 
@@ -3396,22 +3401,18 @@ button {
     padding: 0.7rem 1.4rem;
   }
 
+  .projects-marquee {
+    margin-top: 1.75rem;
+  }
+
   .projects-marquee__chunk {
-    font-size: 1rem;
-    gap: 1.5rem;
-    margin-right: 1.5rem;
+    font-size: 1.45rem;
+    gap: 1.75rem;
+    margin-right: 1.75rem;
   }
 
-  .projects-marquee__edge--top {
-    height: 36px;
-  }
-
-  .projects-marquee__edge--lime {
-    height: 22px;
-  }
-
-  .projects-marquee__inner {
-    padding-block: 1.35rem;
+  .projects-marquee__star {
+    font-size: 1.25rem;
   }
 
   .process__inner {
@@ -3482,24 +3483,27 @@ button {
   }
 
   .timeline-card__title {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
 
   .timeline-card__num {
-    font-size: 2.5rem;
+    font-size: 3.35rem;
     -webkit-text-stroke-width: 2px;
   }
 
   .timeline-card__desc {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
 
   .skills {
-    padding-block: 6rem 6.75rem;
+    padding-block: 4.75rem 5.25rem;
   }
 
   .skills__title {
-    margin-bottom: 3.25rem;
+    margin-bottom: 2.75rem;
   }
 
   .skills__title-top {
@@ -3516,9 +3520,15 @@ button {
   }
 
   .skills__list {
-    column-gap: 1.15rem;
-    row-gap: 1rem;
-    max-width: 36rem;
+    max-width: none;
+    width: 100%;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-areas:
+      "figma figma flows flows systems systems illustrator illustrator"
+      ". webflow webflow framer framer wire wire .";
+    column-gap: 0.35rem;
+    row-gap: 2.35rem;
+    align-items: start;
   }
 
   .skill-badge {
@@ -3528,18 +3538,47 @@ button {
     gap: 0.55rem;
   }
 
+  .skill-badge--figma {
+    justify-self: start;
+    margin: 0.35rem 0 0 0.75rem;
+    transform: rotate(12deg);
+  }
+
   .skill-badge--user-flows {
-    margin-top: -0.7rem;
+    justify-self: center;
+    margin: 0.15rem 0 0;
+    transform: rotate(10deg);
   }
 
   .skill-badge--design-systems {
-    margin-left: 3rem;
-    margin-top: 0.55rem;
-    padding-inline: 2rem;
+    justify-self: center;
+    margin: 0.2rem 0 0;
+    padding-inline: 1.6rem;
+    transform: rotate(-12deg);
+  }
+
+  .skill-badge--illustrator {
+    justify-self: end;
+    margin: 0.1rem 0.6rem 0 0;
+    transform: rotate(16deg);
+  }
+
+  .skill-badge--webflow {
+    justify-self: start;
+    margin: 0 0 0 0.35rem;
+    transform: rotate(-14deg);
   }
 
   .skill-badge--framer {
-    margin-top: -0.3rem;
+    justify-self: center;
+    margin: 0.15rem 0 0;
+    transform: rotate(6deg);
+  }
+
+  .skill-badge--wireframing {
+    justify-self: center;
+    margin: 0.1rem 0.5rem 0 0;
+    transform: rotate(8deg);
   }
 
   .skill-badge--dark {
