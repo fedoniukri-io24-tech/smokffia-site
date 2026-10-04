@@ -42,24 +42,37 @@ const skillOrder = [
 ] as const;
 
 const reviewMeta = [
-  { tone: "white", rotate: -3 },
-  { tone: "lime", rotate: 2.5 },
-  { tone: "pink", rotate: 3 },
-  { tone: "white", rotate: -2 },
+  {
+    tone: "white",
+    rotate: -3,
+    tape: "lime",
+    photo: "/images/reviews/margaryta.jpg",
+  },
+  {
+    tone: "lime",
+    rotate: 2.5,
+    tape: "pink",
+    photo: "/images/reviews/roman.jpg",
+  },
+  {
+    tone: "pink",
+    rotate: 3,
+    tape: "lime",
+    photo: "/images/reviews/artem.jpg",
+  },
+  {
+    tone: "white",
+    rotate: -2,
+    tape: "pink",
+    photo: "/images/reviews/polina.jpg",
+  },
 ];
 
 export default function Process({ process, skills, reviews }: ProcessProps) {
   return (
     <section id="process" className="process">
       <div className="container process__inner">
-        <h2 className="process__title">
-          {process.title}{" "}
-          <WordDesign>{process.titlePink}</WordDesign>
-        </h2>
-
-        <div className="process__timeline">
-          <div className="process__line" aria-hidden />
-
+        <div className="process__heading">
           <Image
             src="/images/about-smiley.svg"
             alt=""
@@ -67,6 +80,10 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
             height={70}
             className="process__deco process__deco--smiley"
           />
+          <h2 className="process__title">
+            {process.title}{" "}
+            <WordDesign>{process.titlePink}</WordDesign>
+          </h2>
           <Image
             src="/images/process-arrow.svg"
             alt=""
@@ -74,6 +91,10 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
             height={65}
             className="process__deco process__deco--arrow"
           />
+        </div>
+
+        <div className="process__timeline">
+          <div className="process__line" aria-hidden />
 
           <div className="process__steps">
             {process.steps.map((step, i) => {
@@ -193,10 +214,27 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
                   className={`review-card review-card--${meta.tone}`}
                   style={{ transform: `rotate(${meta.rotate}deg)` }}
                 >
+                  <Image
+                    src={
+                      meta.tape === "lime"
+                        ? "/images/reviews/tape-lime.svg"
+                        : "/images/reviews/tape-pink.svg"
+                    }
+                    alt=""
+                    width={58}
+                    height={31}
+                    className={`review-card__tape review-card__tape--${meta.tape}`}
+                  />
                   <p className="review-card__text">&ldquo; {r.text} &rdquo;</p>
                   <div className="review-card__author">
-                    <div className="review-card__avatar" aria-hidden>
-                      {r.name.charAt(0)}
+                    <div className="review-card__avatar">
+                      <Image
+                        src={meta.photo}
+                        alt={r.name}
+                        width={80}
+                        height={80}
+                        className="review-card__photo"
+                      />
                     </div>
                     <div>
                       <p className="review-card__name">{r.name}</p>
