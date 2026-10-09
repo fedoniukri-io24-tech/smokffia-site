@@ -802,10 +802,14 @@ button {
 .hero__photo-wrap {
   position: relative;
   z-index: 6;
-  width: min(calc(100vw - 1rem), 440px);
+  width: min(100%, 440px);
+  max-width: 100%;
   margin-inline: auto;
+  align-self: center;
   margin-top: 0.5rem;
   overflow: visible;
+  /* Optical center: pink shadow sits lower-right */
+  transform: translateX(-6px);
 }
 
 .hero__photo-shadow {
@@ -823,6 +827,11 @@ button {
   width: 100%;
   aspect-ratio: 540 / 574;
   background: #f3f3f3;
+}
+
+.hero__photo img {
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero__sparkle {
@@ -904,17 +913,17 @@ button {
   position: relative;
   z-index: 1;
   background-color: transparent;
-  background-image: url("/images/about-bg.png");
+  background-image: url("/images/about-bg-mobile.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100% 135%;
+  background-size: 100% 100%;
   padding-top: 48px;
-  padding-bottom: 5rem;
+  padding-bottom: 5.5rem;
 }
 
 .about__inner {
-  padding-top: 1.25rem;
-  padding-bottom: 1.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.25rem;
 }
 
 .about__grid {
@@ -1064,6 +1073,17 @@ button {
 
 .about__tags--mobile {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.about__tags--mobile::-webkit-scrollbar {
+  display: none;
 }
 
 .about__tag {
@@ -1077,6 +1097,14 @@ button {
   color: var(--white);
   background: transparent;
   white-space: nowrap;
+}
+
+.about__tags--mobile .about__tag {
+  flex: 1 1 0;
+  padding: 0.4rem 0.2rem;
+  font-size: clamp(0.5rem, 2.35vw, 0.625rem);
+  letter-spacing: 0.01em;
+  text-align: center;
 }
 
 
@@ -1418,15 +1446,15 @@ button {
 }
 
 .card-project--left {
-  transform: rotate(-2deg);
+  transform: rotate(-2.5deg);
 }
 
 .card-project--center {
-  transform: rotate(1deg);
+  transform: rotate(1.5deg);
 }
 
 .card-project--right {
-  transform: rotate(2.5deg);
+  transform: rotate(2.75deg);
 }
 
 /* ——— Cases page ——— */
@@ -1673,14 +1701,23 @@ button {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Projects + cases: clean photo grids, no frames / tilt */
-.projects .card-project--left,
-.projects .card-project--center,
-.projects .card-project--right,
+/* Cases page: keep cards straight */
 .cases .card-project--left,
 .cases .card-project--center,
 .cases .card-project--right {
   transform: none;
+}
+
+.projects .card-project--left {
+  transform: rotate(-2.5deg);
+}
+
+.projects .card-project--center {
+  transform: rotate(1.5deg);
+}
+
+.projects .card-project--right {
+  transform: rotate(2.75deg);
 }
 
 .projects .card-project__preview,
@@ -2432,6 +2469,7 @@ button {
   padding-block: 3rem 3.25rem;
   border-top: 2px solid var(--black);
   border-bottom: 2px solid var(--black);
+  overflow: visible;
 }
 
 .skills__title {
@@ -2490,8 +2528,7 @@ button {
     "figma flows"
     "webflow illustrator"
     "systems systems"
-    "framer framer"
-    "wire wire";
+    "wire framer";
   column-gap: 0.55rem;
   row-gap: 0.9rem;
   width: 100%;
@@ -2562,21 +2599,24 @@ button {
 .skill-badge--wireframing {
   grid-area: wire;
   justify-self: start;
+  align-self: start;
   box-sizing: border-box;
   width: fit-content;
-  max-width: min(100%, 20.5rem);
-  margin-top: -1.5rem;
+  max-width: min(100%, 16.5rem);
+  margin-top: -0.35rem;
   margin-left: 0.15rem;
-  padding: 1.1rem 1.35rem;
-  font-size: clamp(1.15rem, 4.8vw, 1.45rem);
+  padding: 0.8rem 1rem;
+  font-size: clamp(0.9rem, 3.8vw, 1.1rem);
   letter-spacing: 0.03em;
-  transform: rotate(5deg);
+  transform: rotate(4deg);
+  z-index: 2;
 }
 
 .skill-badge--framer {
   grid-area: framer;
   justify-self: end;
-  margin-top: -0.1rem;
+  align-self: center;
+  margin-top: 0.15rem;
   margin-right: 0.35rem;
   transform: rotate(5deg);
 }
@@ -3345,6 +3385,7 @@ button {
     width: min(100%, 500px);
     max-width: 100%;
     height: auto;
+    transform: none;
     min-height: 0;
     margin-inline: clamp(0.35rem, 1.2vw, 1rem) clamp(0.15rem, 0.8vw, 0.65rem);
     margin-left: auto;
@@ -3395,6 +3436,7 @@ button {
   .about__body {
     padding-top: 72px;
     padding-bottom: 5rem;
+    background-image: url("/images/about-bg.png");
     background-position: center center;
     background-size: 100% 100%;
   }

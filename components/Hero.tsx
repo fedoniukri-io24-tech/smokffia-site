@@ -112,7 +112,7 @@ export default function Hero({ dict, locale }: HeroProps) {
               alt={dict.photoAlt}
               fill
               sizes="(max-width: 767px) 440px, 420px"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: "center center" }}
               priority
               fetchPriority="high"
             />
