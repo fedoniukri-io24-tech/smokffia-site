@@ -256,19 +256,6 @@ export default function Process({ process, skills, reviews }: ProcessProps) {
           </div>
         </div>
 
-        <div className="reviews__edge" aria-hidden>
-          <svg
-            className="reviews__edge-svg"
-            viewBox="0 0 1440 100"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="currentColor"
-              d="M0 48C120 18 220 72 340 52C460 32 520 8 660 40C800 72 900 82 1040 46C1180 10 1280 22 1380 44C1410 50 1430 48 1440 46V100H0V48Z"
-            />
-          </svg>
-        </div>
       </div>
     </section>
   );

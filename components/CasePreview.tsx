@@ -13,7 +13,6 @@ export default function CasePreview({ visual, alt }: Props) {
         <div
           key={shot.src}
           className={`case-shot case-shot--${index + 1}`}
-          style={{ aspectRatio: `${shot.width} / ${shot.height}` }}
         >
           <Image
             src={shot.src}

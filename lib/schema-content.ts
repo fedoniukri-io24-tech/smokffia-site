@@ -112,10 +112,10 @@ const uk: SchemaContent = {
     {
       question: "Скільки коштує дизайн сайту?",
       answer:
-        "Вартість залежить від обсягу: лендинг, бізнес-сайт, додаток чи брендинг. Актуальні пакети й ціни — у розділі «Послуги і ціни» на сайті SMOKFFIA.",
+        "Вартість залежить від обсягу: лендинг, бізнес-сайт, додаток чи брендинг. Актуальні пакети й ціни — у розділі «Послуги і ціни» на сайті.",
     },
     {
-      question: "Які послуги надає SMOKFFIA?",
+      question: "Які послуги надаєш ти?",
       answer:
         "UI/UX дизайн, вебдизайн, дизайн лендингів і бізнес-сайтів, app design, брендинг, графічний дизайн і дизайн-системи в Figma.",
     },
@@ -125,17 +125,17 @@ const uk: SchemaContent = {
         "Залиште заявку у формі на сайті ({contactsUrl}), напишіть у Telegram ({telegram}) або на email {email}.",
     },
     {
-      question: "Чи працює дизайнерка з клієнтами з України та інших країн?",
+      question: "Чи працюєш ти з клієнтами з України та інших країн?",
       answer:
-        "Так. SMOKFFIA працює віддалено з клієнтами з України та світу — українською, англійською, польською, німецькою та іспанською.",
+        "Так. Я працюю віддалено з клієнтами з України та світу — українською, англійською, польською, німецькою та іспанською.",
     },
     {
-      question: "Чи доступна Софія для фриланс-проєктів?",
+      question: "Чи ти доступна для фриланс-проєктів?",
       answer:
-        "Так, SMOKFFIA відкрита до фриланс-проєктів: лендинги, сайти, додатки, ребрендинг і UI/UX.",
+        "Так, я відкрита до фриланс-проєктів: лендинги, сайти, додатки, ребрендинг і UI/UX.",
     },
     {
-      question: "В яких інструментах працює SMOKFFIA?",
+      question: "В яких інструментах працюєш ти?",
       answer:
         "Основний інструмент — Figma. Також досвід з Framer, Webflow та повним циклом від дослідження до UI kit і передачі в розробку.",
     },
@@ -202,10 +202,10 @@ const en: SchemaContent = {
     {
       question: "How much does website design cost?",
       answer:
-        "Pricing depends on scope: landing page, business website, app, or branding. Current packages and prices are listed in the Services & prices section on SMOKFFIA.",
+        "Pricing depends on scope: landing page, business website, app, or branding. Current packages and prices are listed in the Services & prices section on the site.",
     },
     {
-      question: "What services does SMOKFFIA offer?",
+      question: "What services do you offer?",
       answer:
         "UI/UX design, web design, landing pages, business websites, app design, branding, graphic design, and Figma design systems.",
     },
@@ -215,17 +215,17 @@ const en: SchemaContent = {
         "Submit the form on the site ({contactsUrl}), message on Telegram ({telegram}), or email {email}.",
     },
     {
-      question: "Does SMOKFFIA work with clients in Ukraine and abroad?",
+      question: "Do you work with clients in Ukraine and abroad?",
       answer:
-        "Yes. SMOKFFIA works remotely with clients worldwide — in Ukrainian, English, Polish, German, and Spanish.",
+        "Yes. I work remotely with clients worldwide — in Ukrainian, English, Polish, German, and Spanish.",
     },
     {
-      question: "Is Sofia available for freelance projects?",
+      question: "Are you available for freelance projects?",
       answer:
-        "Yes. SMOKFFIA takes on freelance projects: landing pages, websites, apps, rebranding, and UI/UX.",
+        "Yes. I’m open to freelance projects: landing pages, websites, apps, rebranding, and UI/UX.",
     },
     {
-      question: "What tools does SMOKFFIA use?",
+      question: "What tools do you use?",
       answer:
         "The main tool is Figma. Also experienced with Framer, Webflow, and the full cycle from research to UI kit and developer handoff.",
     },
@@ -292,10 +292,10 @@ const pl: SchemaContent = {
     {
       question: "Ile kosztuje design strony?",
       answer:
-        "Cena zależy od zakresu: landing page, strona biznesowa, aplikacja lub branding. Aktualne pakiety i ceny są w sekcji Usługi i ceny na SMOKFFIA.",
+        "Cena zależy od zakresu: landing page, strona biznesowa, aplikacja lub branding. Aktualne pakiety i ceny są w sekcji Usługi i ceny na stronie.",
     },
     {
-      question: "Jakie usługi oferuje SMOKFFIA?",
+      question: "Jakie usługi oferujesz?",
       answer:
         "UI/UX design, web design, landing page, strony biznesowe, app design, branding, design graficzny i design systems w Figma.",
     },
@@ -305,17 +305,17 @@ const pl: SchemaContent = {
         "Wyślij formularz na stronie ({contactsUrl}), napisz na Telegram ({telegram}) lub email {email}.",
     },
     {
-      question: "Czy SMOKFFIA pracuje z klientami z Ukrainy i zagranicy?",
+      question: "Czy pracujesz z klientami z Ukrainy i zagranicy?",
       answer:
-        "Tak. SMOKFFIA pracuje zdalnie z klientami na całym świecie — po ukraińsku, angielsku, polsku, niemiecku i hiszpańsku.",
+        "Tak. Pracuję zdalnie z klientami na całym świecie — po ukraińsku, angielsku, polsku, niemiecku i hiszpańsku.",
     },
     {
-      question: "Czy Sofia jest dostępna do projektów freelance?",
+      question: "Czy jesteś dostępna do projektów freelance?",
       answer:
-        "Tak. SMOKFFIA realizuje projekty freelance: landing page, strony, aplikacje, rebranding i UI/UX.",
+        "Tak. Jestem otwarta na projekty freelance: landing page, strony, aplikacje, rebranding i UI/UX.",
     },
     {
-      question: "W jakich narzędziach pracuje SMOKFFIA?",
+      question: "W jakich narzędziach pracujesz?",
       answer:
         "Główne narzędzie to Figma. Doświadczenie także z Framer, Webflow i pełnym cyklem od researchu do UI kit i przekazania do developmentu.",
     },
@@ -382,10 +382,10 @@ const de: SchemaContent = {
     {
       question: "Was kostet Webdesign?",
       answer:
-        "Der Preis hängt vom Umfang ab: Landingpage, Business-Website, App oder Branding. Aktuelle Pakete und Preise stehen im Bereich Leistungen & Preise auf SMOKFFIA.",
+        "Der Preis hängt vom Umfang ab: Landingpage, Business-Website, App oder Branding. Aktuelle Pakete und Preise stehen im Bereich Leistungen & Preise auf der Website.",
     },
     {
-      question: "Welche Leistungen bietet SMOKFFIA?",
+      question: "Welche Leistungen bietest du an?",
       answer:
         "UI/UX-Design, Webdesign, Landingpages, Business-Websites, App Design, Branding, Grafikdesign und Design Systems in Figma.",
     },
@@ -395,17 +395,17 @@ const de: SchemaContent = {
         "Formular auf der Website ({contactsUrl}), Telegram ({telegram}) oder E-Mail {email}.",
     },
     {
-      question: "Arbeitet SMOKFFIA mit Kunden aus der Ukraine und dem Ausland?",
+      question: "Arbeitest du mit Kunden aus der Ukraine und dem Ausland?",
       answer:
-        "Ja. SMOKFFIA arbeitet remote mit Kunden weltweit — auf Ukrainisch, Englisch, Polnisch, Deutsch und Spanisch.",
+        "Ja. Ich arbeite remote mit Kunden weltweit — auf Ukrainisch, Englisch, Polnisch, Deutsch und Spanisch.",
     },
     {
-      question: "Ist Sofia für Freelance-Projekte verfügbar?",
+      question: "Bist du für Freelance-Projekte verfügbar?",
       answer:
-        "Ja. SMOKFFIA übernimmt Freelance-Projekte: Landingpages, Websites, Apps, Rebranding und UI/UX.",
+        "Ja. Ich bin offen für Freelance-Projekte: Landingpages, Websites, Apps, Rebranding und UI/UX.",
     },
     {
-      question: "Mit welchen Tools arbeitet SMOKFFIA?",
+      question: "Mit welchen Tools arbeitest du?",
       answer:
         "Haupttool ist Figma. Erfahrung auch mit Framer, Webflow und dem gesamten Prozess von Research bis UI Kit und Developer Handoff.",
     },
@@ -472,10 +472,10 @@ const es: SchemaContent = {
     {
       question: "¿Cuánto cuesta el diseño web?",
       answer:
-        "El precio depende del alcance: landing page, web corporativa, app o branding. Los paquetes y precios actuales están en Servicios y precios en SMOKFFIA.",
+        "El precio depende del alcance: landing page, web corporativa, app o branding. Los paquetes y precios actuales están en Servicios y precios en el sitio.",
     },
     {
-      question: "¿Qué servicios ofrece SMOKFFIA?",
+      question: "¿Qué servicios ofreces?",
       answer:
         "Diseño UI/UX, diseño web, landing pages, webs corporativas, app design, branding, diseño gráfico y design systems en Figma.",
     },
@@ -485,17 +485,17 @@ const es: SchemaContent = {
         "Envía el formulario en el sitio ({contactsUrl}), escribe por Telegram ({telegram}) o email {email}.",
     },
     {
-      question: "¿SMOKFFIA trabaja con clientes de Ucrania y del extranjero?",
+      question: "¿Trabajas con clientes de Ucrania y del extranjero?",
       answer:
-        "Sí. SMOKFFIA trabaja en remoto con clientes de todo el mundo — en ucraniano, inglés, polaco, alemán y español.",
+        "Sí. Trabajo en remoto con clientes de todo el mundo — en ucraniano, inglés, polaco, alemán y español.",
     },
     {
-      question: "¿Sofía está disponible para proyectos freelance?",
+      question: "¿Estás disponible para proyectos freelance?",
       answer:
-        "Sí. SMOKFFIA acepta proyectos freelance: landing pages, webs, apps, rebranding y UI/UX.",
+        "Sí. Estoy abierta a proyectos freelance: landing pages, webs, apps, rebranding y UI/UX.",
     },
     {
-      question: "¿Qué herramientas usa SMOKFFIA?",
+      question: "¿Qué herramientas usas?",
       answer:
         "La herramienta principal es Figma. También experiencia con Framer, Webflow y el ciclo completo desde research hasta UI kit y handoff a desarrollo.",
     },

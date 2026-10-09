@@ -18,7 +18,7 @@ export default function Navbar({ locale, dict }: Props) {
   const base = `/${locale}`;
 
   const links = [
-    { label: dict.works, href: `${base}/cases` },
+    { label: dict.works, href: `${base}/#projects` },
     { label: dict.about, href: `${base}/#about` },
     { label: dict.process, href: `${base}/#process` },
     { label: dict.contacts, href: `${base}/#contacts` },

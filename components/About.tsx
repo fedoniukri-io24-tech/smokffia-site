@@ -73,7 +73,6 @@ export default function About({ dict }: AboutProps) {
               <p className="about__note">{dict.note}</p>
 
               <div className="about__tags about__tags--desktop">
-                <span className="about__tag about__tag--spacer" aria-hidden />
                 {dict.tagsDesktop.map((t) => (
                   <span key={t} className="about__tag">
                     {t}

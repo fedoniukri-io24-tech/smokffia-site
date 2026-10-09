@@ -1,5 +1,7 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/get-dictionary";
 import { caseVisualById, featuredCaseIds } from "@/lib/cases";
@@ -11,10 +13,13 @@ type ProjectsProps = {
   locale: Locale;
 };
 
-export default function Projects({ dict, locale }: ProjectsProps) {
+export default function Projects({ dict, locale: _locale }: ProjectsProps) {
+  const [showAll, setShowAll] = useState(false);
+
   const featured = dict.items.filter((item) =>
     (featuredCaseIds as readonly string[]).includes(item.id),
   );
+  const items = showAll ? dict.items : featured;
 
   return (
     <section id="projects" className="projects">
@@ -31,8 +36,10 @@ export default function Projects({ dict, locale }: ProjectsProps) {
           />
         </h2>
 
-        <div className="projects__grid">
-          {featured.map((item) => {
+        <div
+          className={`projects__grid${showAll ? " projects__grid--all" : ""}`}
+        >
+          {items.map((item) => {
             const visual = caseVisualById[item.id];
             if (!visual) return null;
 
@@ -48,11 +55,17 @@ export default function Projects({ dict, locale }: ProjectsProps) {
           })}
         </div>
 
-        <div className="projects__all">
-          <Link href={`/${locale}/cases`} className="projects__all-link">
-            {dict.viewAll}
-          </Link>
-        </div>
+        {!showAll && (
+          <div className="projects__all">
+            <button
+              type="button"
+              className="projects__all-link"
+              onClick={() => setShowAll(true)}
+            >
+              {dict.viewAll}
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="projects-marquee" aria-hidden>
